@@ -1,19 +1,27 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static const aa = Color(0xffebeff3);
+  static const cardColor = Color(0xffebeff3);
 
-  static const ab = Color(0xffacd2fe);
+  static const shadeBackgroundColor = Color(0xffacd2fe);
 
-  static const ac = Color(0xff0e0f10);
+  static const textColor = Color.fromARGB(255, 6, 14, 73);
 
-  static const ad = Color(0xff1b93fb);
+  static const backgroundColor = Color(0xff7ec3fc);
+  static const backgroundColorlight = Color.fromARGB(103, 209, 238, 248);
 
-  static const ae = Color(0xff0f71ed);
+  static const smallCardColor = Color(0xff0f71ed);
 
-  static const af = Color(0xff505658);
+  static const smalltextColor = Color(0xff505658);
 
-  static const ag = Color(0xffa6a9b1);
+  static const signTextColor = Color(0xffa6a9b1);
 
-  static const ah = Color(0xffc67b22);
+  static const textColorOnboarding = Color(0xffc67b22);
+
+  static const lineBorderColor = Color.fromARGB(50, 168, 227, 255);
+
+  // Circle Grediant Colors
+  static const gradient1 = Color.fromARGB(103, 209, 238, 248);
+  static const gradient2 = Color.fromARGB(92, 163, 229, 253);
+  static const gradient3 = Color.fromARGB(50, 163, 229, 253);
 }
