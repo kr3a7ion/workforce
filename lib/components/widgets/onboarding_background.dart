@@ -12,27 +12,26 @@ class Onboardingbackground extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        color: AppColors.backgroundColor,
-        child: Stack(alignment: Alignment.center, children: const[
-          const CircleGradient(
-            height: 200,
-            width: 200,
-            color: AppColors.gradient1,
-          ),
-          const CircleGradient(
-            height: 100,
-            width: 100,
-            color: AppColors.gradient2,
-          ),
-          const CircleGradient(
-            height: 0,
-            width: 0,
-            color: AppColors.gradient3,
-          ),
-        ]));
+    return Scaffold(
+      backgroundColor: AppColors.backgroundColor,
+      body: Stack(alignment: Alignment.center, children: const[
+            const CircleGradient(
+              height: 200,
+              width: 200,
+              color: AppColors.gradient1,
+            ),
+            const CircleGradient(
+              height: 100,
+              width: 100,
+              color: AppColors.gradient2,
+            ),
+            const CircleGradient(
+              height: 0,
+              width: 0,
+              color: AppColors.gradient3,
+            ),
+          ]),
+    );
   }
 }
 

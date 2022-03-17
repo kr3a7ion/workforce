@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 
 import 'appcolors.dart';
 
-
 //Images Constants
-const kCartoonBoy = 'assets/images/cartoon1.png';
+const String kCartoonBoy = 'assets/images/cartoon1.png';
+const String kGooglelogo = 'assets/images/logos/googlelogo.png';
+const String kApplelogo = 'assets/images/logos/applelogo.png';
+const String kFacebooklogo = 'assets/images/logos/facebooklogo.png';
 
-
-
-
-
+//Fonts contants
+const String kLargefontFamily1 = 'Fredoka';
+const String kLargefontFamily2 = 'PermanentMarker';
+const String kSmallfontFamily = 'Yanone';
 
 //Other Constants
 
@@ -24,9 +26,19 @@ const kLargeTextStyle = TextStyle(
     color: AppColors.textColor,
     fontSize: 50,
     fontWeight: FontWeight.bold,
-    fontFamily: 'PermanentMarker');
+    fontFamily: kLargefontFamily2);
 
+const kSmallTextStyle = TextStyle(
+    color: AppColors.smalltextColor,
+    fontSize: 24,
+    letterSpacing: 1,
+    fontFamily: kSmallfontFamily);
 
+const kButtonTextStyle = TextStyle(
+    color: AppColors.textColor,
+    fontSize: 22,
+    letterSpacing: 1.5,
+    fontWeight: FontWeight.bold,
+    fontFamily: kSmallfontFamily);
 
-
-
+const kBorderRadius = BorderRadius.all(Radius.circular(10));

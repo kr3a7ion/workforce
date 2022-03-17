@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:workforce/screens/login_registrationscreen/login_screen.dart';
+import 'package:workforce/screens/login_registrationscreen/registration_screen.dart';
 import 'package:workforce/screens/onboarding/onboarding_screen.dart';
 
 void main() {
@@ -18,9 +20,18 @@ class StartApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+
+      //Routes
+      initialRoute: '/',
+      routes: {
+        OnboardingScreen.onboardingScreenid : (context) => const OnboardingScreen(),
+        LoginScreen.loginscreenId :(context) => const LoginScreen(),
+        RegistrationScreen.registrationScreenId :(context) => const RegistrationScreen(),
+      },
+
+
       debugShowCheckedModeBanner: false,
-      home: OnboardingScreen(),
     );
   }
 }
