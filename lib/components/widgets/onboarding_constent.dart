@@ -69,7 +69,7 @@ class OnboardingContents extends StatelessWidget {
                 'Here we encourage every skill and "quess what" you get paid for doing what you love. ',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                    color: AppColors.textColor,
+                    color: AppColors.smalltextColor,
                     fontSize: 20,
                     letterSpacing: 1.5,
                     fontFamily: 'Yanone'),

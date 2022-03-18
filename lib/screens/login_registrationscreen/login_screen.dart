@@ -7,13 +7,20 @@ import '../../components/widgets_componets/custom_divider.dart';
 import '../../components/widgets_componets/login_options.dart';
 import '../../components/widgets_componets/signin_button.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   static const String loginscreenId = '/LoginScreen';
   const LoginScreen({Key? key}) : super(key: key);
 
   @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  bool visibility = true;
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: AppColors.whiteBackground,
       body: Center(
         child: Padding(
@@ -40,12 +47,22 @@ class LoginScreen extends StatelessWidget {
                 children: [
                   const CustomTextField(
                     texttype: TextInputType.emailAddress,
+                    child: Text(''),
                   ),
                   const SizedBox(
                     height: 10,
                   ),
-                  const CustomTextField(
+                  CustomTextField(
                     texttype: TextInputType.visiblePassword,
+                    obscuring: visibility ? true : false,
+                    callback: () {
+                      setState(() {
+                        visibility = visibility ? false : true;
+                      });
+                    },
+                    child: visibility
+                        ? const Icon(Icons.visibility_off)
+                        : const Icon(Icons.visibility),
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
