@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:workforce/components/widgets_componets/custom_textfield.dart';
 import 'package:workforce/constants/appcolors.dart';
 import 'package:workforce/constants/constants.dart';
+import 'package:workforce/screens/login_registrationscreen/password_recovery_screen.dart';
+import 'package:workforce/screens/login_registrationscreen/registration_screen.dart';
 
 import '../../components/widgets_componets/custom_divider.dart';
 import '../../components/widgets_componets/login_options.dart';
@@ -16,6 +18,21 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  var signInlogo = <String>[
+    kGooglelogo,
+    kApplelogo,
+    kFacebooklogo,
+  ];
+
+  logoGen() {
+    var genRowimage = <Widget>[];
+    for (var item in signInlogo) {
+      genRowimage.add(LoginOptions(imageasset: item));
+      genRowimage.add(const SizedBox(width: 5));
+    }
+    return genRowimage;
+  }
+
   bool visibility = true;
   @override
   Widget build(BuildContext context) {
@@ -73,6 +90,8 @@ class _LoginScreenState extends State<LoginScreen> {
                           text: 'Recovery Password',
                           ontapped: () {
                             //Implement Recovery Button
+                            Navigator.pushNamed(context,
+                                RecoveryScreen.recoveryScreenId);
                           },
                         ),
                       )
@@ -80,32 +99,29 @@ class _LoginScreenState extends State<LoginScreen> {
                   )
                 ],
               ),
-              const SigninButton(
-                  // Set Login Button ontapped
-                  ),
+              SigninButton(
+                label: 'Sign in',
+                // Set Login Button ontapped
+                ontapped: () {},
+              ),
               const CustomDivider(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  LoginOptions(
-                    imageasset: kGooglelogo,
-                  ),
-                  LoginOptions(
-                    imageasset: kApplelogo,
-                  ),
-                  LoginOptions(
-                    imageasset: kFacebooklogo,
-                  ),
+                children: [
+                  ...logoGen(),
                 ],
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text('Not a member? ', style: kSmallTextStyle),
+                  const Flexible(
+                      child: Text('Not a member? ', style: kSmallTextStyle)),
                   clickableText(
                       text: 'Register now',
                       ontapped: () {
                         //Implement Register Button
+                        Navigator.pushNamed(
+                            context, RegistrationScreen.registrationScreenId);
                       },
                       style: kSmallTextStyle.copyWith(
                           color: AppColors.smallCardColor))
@@ -124,9 +140,12 @@ class _LoginScreenState extends State<LoginScreen> {
       TextStyle? style = kSmallTextStyle}) {
     return GestureDetector(
       onTap: ontapped,
-      child: Text(
-        text,
-        style: style,
+      child: FittedBox(
+        fit: BoxFit.contain,
+        child: Text(
+          text,
+          style: style,
+        ),
       ),
     );
   }

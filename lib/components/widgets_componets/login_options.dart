@@ -12,19 +12,21 @@ class LoginOptions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 70,
-      width: 100,
-      decoration: BoxDecoration(
-        borderRadius: kBorderRadius,
-        color: AppColors.gradient3,
-        border: Border.all(width: 2, color: AppColors.gradient2),
-      ),
-      child: Center(
-        child: Image.asset(
-          imageasset!,
-          height: 50,
-          width: 50,
+    return Expanded(
+      child: Container(
+        height: 70,
+        width: 90,
+        decoration: BoxDecoration(
+          borderRadius: kBorderRadius,
+          color: AppColors.gradient3,
+          border: Border.all(width: 2, color: AppColors.gradient2),
+        ),
+        child: Center(
+          child: Image.asset(
+            imageasset!,
+            height: 50,
+            width: 50,
+          ),
         ),
       ),
     );

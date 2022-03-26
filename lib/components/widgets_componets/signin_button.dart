@@ -4,11 +4,10 @@ import '../../constants/appcolors.dart';
 import '../../constants/constants.dart';
 
 class SigninButton extends StatelessWidget {
-  const SigninButton({
-    Key? key, this.ontapped
-  }) : super(key: key);
+  const SigninButton({Key? key, this.ontapped, this.label}) : super(key: key);
 
   final void Function()? ontapped;
+  final String? label;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +24,7 @@ class SigninButton extends StatelessWidget {
                 color: AppColors.textColor,
                 child: Center(
                     child: Text(
-                  'Sign in',
+                  label!,
                   style: kSmallTextStyle.copyWith(color: Colors.white),
                 )),
                 borderRadius: const BorderRadius.all(Radius.circular(15)),
