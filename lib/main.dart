@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:workforce/constants/apptheme.dart';
 import 'package:workforce/screens/login_registrationscreen/login_screen.dart';
 import 'package:workforce/screens/login_registrationscreen/password_recovery_screen.dart';
 import 'package:workforce/screens/login_registrationscreen/registration_screen.dart';
@@ -22,7 +23,7 @@ class StartApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-
+      theme: AppTheme.lightTheme,
       //Routes
       initialRoute: '/',
       routes: {

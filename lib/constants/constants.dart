@@ -28,7 +28,7 @@ const kLargeTextStyle = TextStyle(
     fontWeight: FontWeight.bold,
     fontFamily: kLargefontFamily2);
 
-const kSmallTextStyle = TextStyle(
+const kMediumTextStyle = TextStyle(
     color: AppColors.smalltextColor,
     fontSize: 24,
     letterSpacing: 1,
@@ -36,7 +36,7 @@ const kSmallTextStyle = TextStyle(
 
 const kButtonTextStyle = TextStyle(
     color: AppColors.textColor,
-    fontSize: 22,
+    fontSize: 24,
     letterSpacing: 1.5,
     fontWeight: FontWeight.bold,
     fontFamily: kSmallfontFamily);

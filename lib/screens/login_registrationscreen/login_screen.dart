@@ -56,7 +56,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   const Text(
                     "Welcome back we've missed! you",
-                    style: kSmallTextStyle,
+                    style: kMediumTextStyle,
                   ),
                 ],
               ),
@@ -115,7 +115,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Flexible(
-                      child: Text('Not a member? ', style: kSmallTextStyle)),
+                      child: Text('Not a member? ', style: kMediumTextStyle)),
                   clickableText(
                       text: 'Register now',
                       ontapped: () {
@@ -123,7 +123,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         Navigator.pushNamed(
                             context, RegistrationScreen.registrationScreenId);
                       },
-                      style: kSmallTextStyle.copyWith(
+                      style: kMediumTextStyle.copyWith(
                           color: AppColors.smallCardColor))
                 ],
               )
@@ -137,7 +137,7 @@ class _LoginScreenState extends State<LoginScreen> {
   GestureDetector clickableText(
       {required String text,
       required void Function() ontapped,
-      TextStyle? style = kSmallTextStyle}) {
+      TextStyle? style = kMediumTextStyle}) {
     return GestureDetector(
       onTap: ontapped,
       child: FittedBox(

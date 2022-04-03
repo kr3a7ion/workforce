@@ -25,7 +25,7 @@ class SigninButton extends StatelessWidget {
                 child: Center(
                     child: Text(
                   label!,
-                  style: kSmallTextStyle.copyWith(color: Colors.white),
+                  style: kMediumTextStyle.copyWith(color: Colors.white),
                 )),
                 borderRadius: const BorderRadius.all(Radius.circular(15)),
               ),
