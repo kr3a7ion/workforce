@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../../constants/appcolors.dart';
 import '../../constants/constants.dart';
 
-class SigninButton extends StatelessWidget {
-  const SigninButton({Key? key, this.ontapped, this.label}) : super(key: key);
+class LargeButton extends StatelessWidget {
+  const LargeButton({Key? key, this.ontapped, this.label}) : super(key: key);
 
   final void Function()? ontapped;
   final String? label;
@@ -19,7 +19,7 @@ class SigninButton extends StatelessWidget {
             child: GestureDetector(
               onTap: () => ontapped,
               child: Material(
-                elevation: 10,
+                elevation: 20,
                 shadowColor: AppColors.backgroundColor,
                 color: AppColors.textColor,
                 child: Center(

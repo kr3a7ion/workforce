@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:workforce/components/widgets/phone_countryformfield.dart';
 
 import '../widgets_componets/custom_textfield.dart';
 
@@ -8,6 +9,7 @@ class RegistrationFormField extends StatelessWidget {
   final String lastName = 'Last Name';
   final String emailLabel = 'Email';
   final String phoneNumber = 'Phone';
+  final String initailCountry = 'NG';
 
   Widget buildForm({
     required String label,
@@ -37,8 +39,10 @@ class RegistrationFormField extends StatelessWidget {
         buildForm(label: firtName, textFieldType: TextInputType.name),
         buildForm(label: lastName, textFieldType: TextInputType.name),
         buildForm(label: emailLabel, textFieldType: TextInputType.emailAddress),
-        buildForm(label: phoneNumber, textFieldType: TextInputType.number),
+        PhoneCountryFormField(phoneNumber: phoneNumber, initailCountry: initailCountry)
       ],
     ));
   }
 }
+
+

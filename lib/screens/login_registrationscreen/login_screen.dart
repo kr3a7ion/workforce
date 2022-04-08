@@ -98,7 +98,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   )
                 ],
               ),
-              SigninButton(
+              LargeButton(
                 label: 'Sign in',
                 // Set Login Button ontapped
                 ontapped: () {},

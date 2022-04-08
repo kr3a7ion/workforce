@@ -7,6 +7,7 @@ const String kCartoonBoy = 'assets/images/cartoon1.png';
 const String kGooglelogo = 'assets/images/logos/googlelogo.png';
 const String kApplelogo = 'assets/images/logos/applelogo.png';
 const String kFacebooklogo = 'assets/images/logos/facebooklogo.png';
+const String kHumansCharacters = 'assets/images/humanCharacters.png';
 
 //Fonts contants
 const String kLargefontFamily1 = 'Fredoka';

@@ -45,4 +45,9 @@ class AppColors {
   static const gradient2 = Color.fromARGB(92, 163, 229, 253);
   static const gradient3 = Color.fromARGB(50, 163, 229, 253);
 
+  //Background Gradient Colors
+  static const backgroundColorButtom = Color.fromARGB(255, 6, 14, 73);
+  static const backgroundColorMiddle1 = Color(0XFF2EAAFA);
+  static const backgroundColorMiddle2 = Color(0XFFADF7F2);
+  static const backgroundColorTop = Color(0xffebeff3);
 }

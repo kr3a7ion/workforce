@@ -51,7 +51,7 @@ class RecoveryScreen extends StatelessWidget {
                         //implement recovery password callback
                       },
                     ),
-                    const SigninButton(
+                    const LargeButton(
                       label: 'Recover Password',
                     )
                   ],

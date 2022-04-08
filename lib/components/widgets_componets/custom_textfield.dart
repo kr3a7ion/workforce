@@ -53,8 +53,8 @@ SizedBox sizedFormField(
       obscureText: obscure!,
       decoration: InputDecoration(
         filled: true,
-        fillColor: Colors.white,
-        focusColor: AppColors.backgroundColorlight,
+        fillColor: const Color.fromARGB(186, 255, 255, 255),
+        focusColor: Colors.black,
         label: Text(label),
         labelStyle: const TextStyle(color: AppColors.textColor),
         suffixIcon: GestureDetector(
@@ -63,11 +63,11 @@ SizedBox sizedFormField(
         ),
         suffixIconColor: suffixIconColor,
         enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
-            borderSide: const BorderSide(width: 2, color: AppColors.textColor)),
+            borderRadius: BorderRadius.circular(25),
+            borderSide: const BorderSide(width: 2, color: Color.fromARGB(255, 231, 231, 231))),
         focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
-            borderSide: const BorderSide(width: 3, color: AppColors.lineBorderColor)),
+            borderRadius: BorderRadius.circular(25),
+            borderSide: const BorderSide(width: 2, color: Color.fromARGB(255, 231, 231, 231))),
       ),
     ),
   );
