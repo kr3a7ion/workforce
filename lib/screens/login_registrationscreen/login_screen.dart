@@ -63,21 +63,20 @@ class _LoginScreenState extends State<LoginScreen> {
               Column(
                 children: [
                   const CustomTextField(
-                    texttype: TextInputType.emailAddress,
-                    child: Text(''),
+                    textFieldType: TextInputType.emailAddress,
                   ),
                   const SizedBox(
                     height: 10,
                   ),
                   CustomTextField(
-                    texttype: TextInputType.visiblePassword,
+                    textFieldType: TextInputType.visiblePassword,
                     obscuring: visibility ? true : false,
                     callback: () {
                       setState(() {
                         visibility = visibility ? false : true;
                       });
                     },
-                    child: visibility
+                    suffixChild: visibility
                         ? const Icon(Icons.visibility_off)
                         : const Icon(Icons.visibility),
                   ),

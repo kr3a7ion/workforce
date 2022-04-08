@@ -4,70 +4,71 @@ import 'package:workforce/constants/appcolors.dart';
 class CustomTextField extends StatelessWidget {
   const CustomTextField({
     Key? key,
-    this.texttype,
+    this.textFieldType,
     this.callback,
-    this.child,
+    this.suffixChild = const Text(''),
     this.obscuring,
   }) : super(key: key);
-  final TextInputType? texttype;
+  final TextInputType? textFieldType;
   final Function()? callback;
-  final Widget? child;
+  final Widget? suffixChild;
   final bool? obscuring;
 
   @override
   Widget build(BuildContext context) {
-    if (texttype == TextInputType.emailAddress) {
-      return SizedBox(
-        height: 60,
-        width: MediaQuery.of(context).size.width - 20,
-        child: myTextField(
-          texttype: texttype!,
-          label: 'Email',
-          obscure: false,
-          ontapped: callback,
-          suffixColor: Colors.white,
-          child: child,
-        ),
+    if (textFieldType == TextInputType.emailAddress) {
+      return sizedFormField(
+        textFieldType: textFieldType!,
+        label: 'Email',
+        obscure: false,
+        visibleTap: callback,
+        suffixIconColor: Colors.white,
+        suffixchild: suffixChild,
       );
     } else {
-      return SizedBox(
-        height: 60,
-        width: MediaQuery.of(context).size.width - 20,
-        child: myTextField(
-          texttype: texttype!,
-          label: 'Password',
-          ontapped: callback,
-          obscure: obscuring,
-          child: child,
-          suffixColor: AppColors.textColor,
-        ),
+      return sizedFormField(
+        textFieldType: textFieldType!,
+        label: 'Password',
+        visibleTap: callback,
+        obscure: obscuring,
+        suffixchild: suffixChild,
+        suffixIconColor: AppColors.textColor,
       );
     }
   }
 }
 
-TextField myTextField(
-    {required TextInputType texttype,
+SizedBox sizedFormField(
+    {required TextInputType textFieldType,
     required String label,
-    required void Function()? ontapped,
+    required void Function()? visibleTap,
     bool? obscure,
-    Color? suffixColor,
-    Widget? child}) {
-  return TextField(
-    keyboardType: texttype,
-    obscureText: obscure!,
-    decoration: InputDecoration(
+    Color? suffixIconColor,
+    Widget? suffixchild = const Text('')}) {
+  return SizedBox(
+    height: 60,
+    width: double.infinity,
+    child: TextFormField(
+      keyboardType: textFieldType,
+      obscureText: obscure!,
+      decoration: InputDecoration(
         filled: true,
         fillColor: Colors.white,
         focusColor: AppColors.backgroundColorlight,
         label: Text(label),
         labelStyle: const TextStyle(color: AppColors.textColor),
         suffixIcon: GestureDetector(
-          onTap: ontapped,
-          child: child,
+          onTap: visibleTap,
+          child: suffixchild,
         ),
-        suffixIconColor: suffixColor,
-        border: const OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(8)))),
+        suffixIconColor: suffixIconColor,
+        enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: const BorderSide(width: 2, color: AppColors.textColor)),
+        focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: const BorderSide(width: 3, color: AppColors.lineBorderColor)),
+      ),
+    ),
   );
 }

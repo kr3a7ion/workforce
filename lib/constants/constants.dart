@@ -42,3 +42,19 @@ const kButtonTextStyle = TextStyle(
     fontFamily: kSmallfontFamily);
 
 const kBorderRadius = BorderRadius.all(Radius.circular(10));
+
+const kBackButton = Icon(
+  Icons.arrow_back_ios_new_rounded,
+  size: 40,
+  color: AppColors.textColor,
+);
+
+const kForwardButton = Icon(
+  Icons.arrow_forward_ios_rounded,
+  size: 35,
+  color: AppColors.textColor,
+);
+
+const kSpace20 = SizedBox(
+  height: 20,
+);

@@ -1,28 +1,26 @@
 import 'package:flutter/material.dart';
 
 MaterialColor buildMaterialColor(Color color) {
-    List strengths = <double>[.05];
-    Map<int, Color> swatch = {};
-    final int r = color.red, g = color.green, b = color.blue;
+  List strengths = <double>[.05];
+  Map<int, Color> swatch = {};
+  final int r = color.red, g = color.green, b = color.blue;
 
-    for (int i = 1; i < 10; i++) {
-      strengths.add(0.1 * i);
-    }
-    for (var strength in strengths) {
-      final double ds = 0.5 - strength;
-      swatch[(strength * 1000).round()] = Color.fromRGBO(
-        r + ((ds < 0 ? r : (255 - r)) * ds).round(),
-        g + ((ds < 0 ? g : (255 - g)) * ds).round(),
-        b + ((ds < 0 ? b : (255 - b)) * ds).round(),
-        1,
-      );
-    }
-    return MaterialColor(color.value, swatch);
+  for (int i = 1; i < 10; i++) {
+    strengths.add(0.1 * i);
   }
+  for (var strength in strengths) {
+    final double ds = 0.5 - strength;
+    swatch[(strength * 1000).round()] = Color.fromRGBO(
+      r + ((ds < 0 ? r : (255 - r)) * ds).round(),
+      g + ((ds < 0 ? g : (255 - g)) * ds).round(),
+      b + ((ds < 0 ? b : (255 - b)) * ds).round(),
+      1,
+    );
+  }
+  return MaterialColor(color.value, swatch);
+}
 
 class AppColors {
-  
-
   static final whiteBackground = buildMaterialColor(const Color(0xffebeff3));
 
   static const shadeBackgroundColor = Color(0xffacd2fe);
@@ -46,4 +44,5 @@ class AppColors {
   static const gradient1 = Color.fromARGB(103, 209, 238, 248);
   static const gradient2 = Color.fromARGB(92, 163, 229, 253);
   static const gradient3 = Color.fromARGB(50, 163, 229, 253);
+
 }

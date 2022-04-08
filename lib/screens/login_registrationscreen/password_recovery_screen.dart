@@ -23,11 +23,7 @@ class RecoveryScreen extends StatelessWidget {
                 },
                 child: const Padding(
                   padding: EdgeInsets.all(8.0),
-                  child: Icon(
-                    Icons.arrow_back_ios_new_rounded,
-                    size: 40,
-                    color: AppColors.textColor,
-                  ),
+                  child: kBackButton
                 ),
               )
             ],
@@ -49,8 +45,8 @@ class RecoveryScreen extends StatelessWidget {
                           fontSize: 30, fontWeight: FontWeight.normal),
                     ),
                     CustomTextField(
-                      texttype: TextInputType.emailAddress,
-                      child: const Text(''),
+                      textFieldType: TextInputType.emailAddress,
+                      suffixChild: const Text(''),
                       callback: () {
                         //implement recovery password callback
                       },
