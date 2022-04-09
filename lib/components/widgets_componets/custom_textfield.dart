@@ -38,36 +38,43 @@ class CustomTextField extends StatelessWidget {
   }
 }
 
-SizedBox sizedFormField(
+Material sizedFormField(
     {required TextInputType textFieldType,
     required String label,
     required void Function()? visibleTap,
     bool? obscure,
     Color? suffixIconColor,
     Widget? suffixchild = const Text('')}) {
-  return SizedBox(
-    height: 60,
-    width: double.infinity,
-    child: TextFormField(
-      keyboardType: textFieldType,
-      obscureText: obscure!,
-      decoration: InputDecoration(
-        filled: true,
-        fillColor: const Color.fromARGB(186, 255, 255, 255),
-        focusColor: Colors.black,
-        label: Text(label),
-        labelStyle: const TextStyle(color: AppColors.textColor),
-        suffixIcon: GestureDetector(
-          onTap: visibleTap,
-          child: suffixchild,
+  return Material(
+    color: Colors.transparent,
+    elevation: 10,
+    borderRadius: BorderRadius.circular(25),
+    child: SizedBox(
+      height: 60,
+      width: double.infinity,
+      child: TextFormField(
+        keyboardType: textFieldType,
+        obscureText: obscure!,
+        decoration: InputDecoration(
+          filled: true,
+          fillColor: Color.fromARGB(230, 255, 255, 255),
+          focusColor: Colors.black,
+          label: Text(label),
+          labelStyle: const TextStyle(color: AppColors.textColor),
+          suffixIcon: GestureDetector(
+            onTap: visibleTap,
+            child: suffixchild,
+          ),
+          suffixIconColor: suffixIconColor,
+          enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(25),
+              borderSide: const BorderSide(
+                  width: 2, color: Color.fromARGB(255, 231, 231, 231))),
+          focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(25),
+              borderSide: const BorderSide(
+                  width: 2, color: Color.fromARGB(255, 231, 231, 231))),
         ),
-        suffixIconColor: suffixIconColor,
-        enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(25),
-            borderSide: const BorderSide(width: 2, color: Color.fromARGB(255, 231, 231, 231))),
-        focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(25),
-            borderSide: const BorderSide(width: 2, color: Color.fromARGB(255, 231, 231, 231))),
       ),
     ),
   );

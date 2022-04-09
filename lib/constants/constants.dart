@@ -59,3 +59,7 @@ const kForwardButton = Icon(
 const kSpace20 = SizedBox(
   height: 20,
 );
+
+const kSpace10 = SizedBox(
+  height: 10,
+);

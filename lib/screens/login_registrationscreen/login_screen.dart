@@ -66,7 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     textFieldType: TextInputType.emailAddress,
                   ),
                   const SizedBox(
-                    height: 10,
+                    height: 15,
                   ),
                   CustomTextField(
                     textFieldType: TextInputType.visiblePassword,

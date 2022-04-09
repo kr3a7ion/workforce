@@ -15,26 +15,32 @@ class PhoneCountryFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return IntlPhoneField(
-      decoration: InputDecoration(
-        filled: true,
-        fillColor: const Color.fromARGB(186, 255, 255, 255),
-        focusColor: Colors.black,
-        labelText: phoneNumber,
-        labelStyle: const TextStyle(color: AppColors.textColor),
-        enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(25),
-            borderSide: const BorderSide(
-                width: 2, color: Color.fromARGB(255, 231, 231, 231))),
-        focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(25),
-            borderSide: const BorderSide(
-                width: 2, color: Color.fromARGB(255, 231, 231, 231))),
+    return Material(
+      color: Colors.transparent,
+      elevation: 10,
+      shadowColor: const Color.fromARGB(187, 206, 206, 206),
+      borderRadius: BorderRadius.circular(25),
+      child: IntlPhoneField(
+        decoration: InputDecoration(
+          filled: true,
+          fillColor: const Color.fromARGB(186, 255, 255, 255),
+          focusColor: Colors.black,
+          labelText: phoneNumber,
+          labelStyle: const TextStyle(color: AppColors.textColor),
+          enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(25),
+              borderSide: const BorderSide(
+                  width: 2, color: Color.fromARGB(255, 231, 231, 231))),
+          focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(25),
+              borderSide: const BorderSide(
+                  width: 2, color: Color.fromARGB(255, 231, 231, 231))),
+        ),
+        initialCountryCode: initailCountry,
+        onChanged: (phone) {
+          print(phone.completeNumber);
+        },
       ),
-      initialCountryCode: initailCountry,
-      onChanged: (phone) {
-        print(phone.completeNumber);
-      },
     );
   }
 }

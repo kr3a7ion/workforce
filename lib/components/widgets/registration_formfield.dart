@@ -39,10 +39,11 @@ class RegistrationFormField extends StatelessWidget {
         buildForm(label: firtName, textFieldType: TextInputType.name),
         buildForm(label: lastName, textFieldType: TextInputType.name),
         buildForm(label: emailLabel, textFieldType: TextInputType.emailAddress),
-        PhoneCountryFormField(phoneNumber: phoneNumber, initailCountry: initailCountry)
+        PhoneCountryFormField(
+          phoneNumber: phoneNumber,
+          initailCountry: initailCountry,
+        )
       ],
     ));
   }
 }
-
-
