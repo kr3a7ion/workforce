@@ -11,9 +11,9 @@ class RegistrationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Theme.of(context).colorScheme.primary,
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Container(
             width: double.infinity,
@@ -44,35 +44,30 @@ class RegistrationScreen extends StatelessWidget {
                   child: Text(
                     'Create Account',
                     style: kMediumTextStyle.copyWith(
-                      color: AppColors.textColor,
-                      fontSize: 45,
-                      fontWeight: FontWeight.bold,
-                      letterSpacing: 2
-                    ),
+                        color: AppColors.textColor,
+                        fontSize: 45,
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 2),
                   ),
                 ),
               ],
             ),
           ),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  kSpace20,
-                  Text(
-                    'Fill in the information below',
-                    style: Theme.of(context).textTheme.displayMedium!.copyWith(
-                        fontSize: 22,
-                        fontFamily: kLargefontFamily1,
-                        letterSpacing: 1,
-                        color: AppColors.textColorOnboarding),
-                  ),
-                  kSpace10,
-                  const Expanded(child: RegistrationFormField()),
-                ],
-              ),
+          Padding(
+            padding: const EdgeInsets.only(left: 30, right: 30, bottom: 80),
+            child: Column(
+              children: [
+                kSpace10,
+                Text(
+                  'Fill in the information below',
+                  style: Theme.of(context).textTheme.displayMedium!.copyWith(
+                      fontSize: 22,
+                      fontFamily: kLargefontFamily1,
+                      letterSpacing: 1,
+                      color: AppColors.textColorOnboarding),
+                ),
+                const RegistrationFormField(),
+              ],
             ),
           ),
         ],

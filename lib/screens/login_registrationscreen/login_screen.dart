@@ -87,6 +87,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         padding: const EdgeInsets.only(top: 15),
                         child: clickableText(
                           text: 'Recovery Password',
+                          style: kMediumTextStyle.copyWith(
+                            color: AppColors.textColorOnboarding
+                          ),
                           ontapped: () {
                             //Implement Recovery Button
                             Navigator.pushNamed(context,
@@ -123,7 +126,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             context, RegistrationScreen.registrationScreenId);
                       },
                       style: kMediumTextStyle.copyWith(
-                          color: AppColors.smallCardColor))
+                          color: AppColors.textColorOnboarding))
                 ],
               )
             ],

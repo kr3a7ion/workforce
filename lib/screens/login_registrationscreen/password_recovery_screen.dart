@@ -15,6 +15,7 @@ class RecoveryScreen extends StatelessWidget {
       backgroundColor: AppColors.whiteBackground,
       body: Column(
         children: [
+          kSpace10,
           Row(
             children: [
               GestureDetector(
@@ -29,7 +30,14 @@ class RecoveryScreen extends StatelessWidget {
             ],
           ),
           const SizedBox(
-            height: 100,
+            height: 50,
+          ),
+
+          FittedBox(
+            child: SizedBox(
+              height: 200,
+              width: 200,
+              child: Image.asset(kForgotPassword, fit: BoxFit.contain,)),
           ),
           Padding(
             padding: const EdgeInsets.only(left: 30, right: 30),

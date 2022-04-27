@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:workforce/constants/appcolors.dart';
+import 'package:workforce/main.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField({
@@ -53,11 +54,14 @@ Material sizedFormField(
       height: 60,
       width: double.infinity,
       child: TextFormField(
+        onFieldSubmitted: ((value) {
+          notificationbarHide();
+        }),
         keyboardType: textFieldType,
         obscureText: obscure!,
         decoration: InputDecoration(
           filled: true,
-          fillColor: Color.fromARGB(230, 255, 255, 255),
+          fillColor: const Color.fromARGB(230, 255, 255, 255),
           focusColor: Colors.black,
           label: Text(label),
           labelStyle: const TextStyle(color: AppColors.textColor),

@@ -8,6 +8,8 @@ const String kGooglelogo = 'assets/images/logos/googlelogo.png';
 const String kApplelogo = 'assets/images/logos/applelogo.png';
 const String kFacebooklogo = 'assets/images/logos/facebooklogo.png';
 const String kHumansCharacters = 'assets/images/humanCharacters.png';
+const String kForgotPassword = 'assets/images/forgotpassword.png';
+const String kWorkForcelogo = 'assets/images/logos/workforcelogo.png';
 
 //Fonts contants
 const String kLargefontFamily1 = 'Fredoka';
@@ -45,7 +47,7 @@ const kButtonTextStyle = TextStyle(
 const kBorderRadius = BorderRadius.all(Radius.circular(10));
 
 const kBackButton = Icon(
-  Icons.arrow_back_ios_new_rounded,
+  Icons.arrow_back_ios_rounded,
   size: 40,
   color: AppColors.textColor,
 );

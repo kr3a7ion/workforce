@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:workforce/constants/appcolors.dart';
 import 'package:workforce/constants/constants.dart';
 
 class CustomDivider extends StatelessWidget {
@@ -18,6 +19,7 @@ class CustomDivider extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(left: 15, right: 15),
           child: Text('Or continue with', style: kMediumTextStyle.copyWith(
+            color: AppColors.textColorOnboarding,
             fontSize: 20,
           ),),
         ),
