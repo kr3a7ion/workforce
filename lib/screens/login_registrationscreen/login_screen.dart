@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:workforce/components/widgets_componets/custom_textfield.dart';
 import 'package:workforce/constants/appcolors.dart';
 import 'package:workforce/constants/constants.dart';
+import 'package:workforce/screens/home/dashboard.dart';
 import 'package:workforce/screens/login_registrationscreen/password_recovery_screen.dart';
 import 'package:workforce/screens/login_registrationscreen/registration_screen.dart';
 
@@ -88,12 +89,11 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: clickableText(
                           text: 'Recovery Password',
                           style: kMediumTextStyle.copyWith(
-                            color: AppColors.textColorOnboarding
-                          ),
+                              color: AppColors.textColorOnboarding),
                           ontapped: () {
                             //Implement Recovery Button
-                            Navigator.pushNamed(context,
-                                RecoveryScreen.recoveryScreenId);
+                            Navigator.pushNamed(
+                                context, RecoveryScreen.recoveryScreenId);
                           },
                         ),
                       )
@@ -104,7 +104,10 @@ class _LoginScreenState extends State<LoginScreen> {
               LargeButton(
                 label: 'Sign in',
                 // Set Login Button ontapped
-                ontapped: () {},
+                ontapped: () {
+                  Navigator.pushReplacementNamed(
+                      context, Dashboard.dashboardId);
+                },
               ),
               const CustomDivider(),
               Row(

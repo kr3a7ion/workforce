@@ -17,7 +17,7 @@ class LargeButton extends StatelessWidget {
           child: SizedBox(
             height: 60,
             child: GestureDetector(
-              onTap: () => ontapped,
+              onTap: () => ontapped!(),
               child: Material(
                 elevation: 20,
                 shadowColor: AppColors.backgroundColor,

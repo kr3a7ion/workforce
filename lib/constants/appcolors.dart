@@ -38,6 +38,8 @@ class AppColors {
 
   static const textColorOnboarding = Color(0xffc67b22);
 
+  static const profileCardColor = Colors.orange;
+
   static const lineBorderColor = Color.fromARGB(50, 168, 227, 255);
 
   // Circle Grediant Colors

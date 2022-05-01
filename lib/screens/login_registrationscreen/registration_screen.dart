@@ -26,8 +26,8 @@ class RegistrationScreen extends StatelessWidget {
                   AppColors.backgroundColorButtom,
                 ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
                 borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(50),
-                    bottomRight: Radius.circular(50)),
+                    bottomLeft: Radius.circular(30),
+                    bottomRight: Radius.circular(30)),
                 image: DecorationImage(
                     image: AssetImage(kHumansCharacters),
                     alignment: Alignment.center,
@@ -57,7 +57,7 @@ class RegistrationScreen extends StatelessWidget {
             padding: const EdgeInsets.only(left: 30, right: 30, bottom: 80),
             child: Column(
               children: [
-                kSpace10,
+                kSpace20,
                 Text(
                   'Fill in the information below',
                   style: Theme.of(context).textTheme.displayMedium!.copyWith(
@@ -66,6 +66,7 @@ class RegistrationScreen extends StatelessWidget {
                       letterSpacing: 1,
                       color: AppColors.textColorOnboarding),
                 ),
+                kSpace10,
                 const RegistrationFormField(),
               ],
             ),

@@ -4,6 +4,8 @@ import 'appcolors.dart';
 
 //Images Constants
 const String kCartoonBoy = 'assets/images/cartoon1.png';
+const String kProfileImageMale = 'assets/images/profile.png';
+const String kFemaleProfileImage = 'assets/images/femaleprofile.png';
 const String kGooglelogo = 'assets/images/logos/googlelogo.png';
 const String kApplelogo = 'assets/images/logos/applelogo.png';
 const String kFacebooklogo = 'assets/images/logos/facebooklogo.png';
@@ -25,6 +27,13 @@ const kWelcomeCardStyle = BoxDecoration(
         bottomRight: Radius.circular(15),
         topRight: Radius.circular(15)));
 
+const kDashboardCardDecoration = BoxDecoration(
+    borderRadius: kBorderRadius,
+    gradient: LinearGradient(colors: [
+      AppColors.smallCardColor,
+      AppColors.backgroundColor,
+    ], begin: Alignment.topLeft, end: Alignment.bottomRight));
+
 const kLargeTextStyle = TextStyle(
     color: AppColors.textColor,
     fontSize: 50,
@@ -36,6 +45,13 @@ const kMediumTextStyle = TextStyle(
     fontSize: 24,
     letterSpacing: 1,
     fontFamily: kSmallfontFamily);
+
+const kSmallTextStyle = TextStyle(
+  color: AppColors.smalltextColor,
+  fontSize: 20,
+  letterSpacing: 1.5,
+  fontFamily: kSmallfontFamily,
+);
 
 const kButtonTextStyle = TextStyle(
     color: AppColors.textColor,

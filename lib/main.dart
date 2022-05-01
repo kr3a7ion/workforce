@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:workforce/constants/apptheme.dart';
+import 'package:workforce/screens/home/dashboard.dart';
 import 'package:workforce/screens/login_registrationscreen/login_screen.dart';
 import 'package:workforce/screens/login_registrationscreen/password_recovery_screen.dart';
 import 'package:workforce/screens/login_registrationscreen/registration_screen.dart';
@@ -31,6 +32,7 @@ class StartApp extends StatelessWidget {
         LoginScreen.loginscreenId :(context) => const LoginScreen(),
         RegistrationScreen.registrationScreenId :(context) => const RegistrationScreen(),
         RecoveryScreen.recoveryScreenId :(context) => const RecoveryScreen(),
+        Dashboard.dashboardId :(context) => const Dashboard(),
       },
 
 
