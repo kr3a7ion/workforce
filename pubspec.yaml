@@ -58,6 +58,7 @@ flutter:
   assets:
     - assets/images/
     - assets/images/logos/
+    - assets/images/money/
 
 
   fonts:
@@ -75,6 +76,14 @@ flutter:
       fonts:
   # - asset: assets/fonts/Fredoka-Regular.ttf
         - asset: assets/fonts/YanoneKaffeesatz-Regular.ttf
+
+    - family: Josefin
+      fonts:
+        - asset: assets/fonts/JosefinSans-Regular.ttf
+
+    - family: RadioCanada
+      fonts:
+        - asset: assets/fonts/RadioCanada-VariableFont_wdth,wght.ttf
 
     
 

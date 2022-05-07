@@ -23,6 +23,8 @@ MaterialColor buildMaterialColor(Color color) {
 class AppColors {
   static final whiteBackground = buildMaterialColor(const Color(0xffebeff3));
 
+  static const pureWhiteBackground = Colors.white;
+
   static const shadeBackgroundColor = Color(0xffacd2fe);
 
   static const textColor = Color.fromARGB(255, 6, 14, 73);
@@ -30,15 +32,20 @@ class AppColors {
   static const backgroundColor = Color(0xff7ec3fc);
   static const backgroundColorlight = Color.fromARGB(103, 209, 238, 248);
 
-  static const smallCardColor = Color(0xff0f71ed);
+  static const smallCardColor = Color(0xff2EB1FC);
+  static const smallCardColorlight = Color.fromARGB(255, 123, 202, 255);
 
   static const smalltextColor = Color(0xff505658);
 
   static const signTextColor = Color(0xffa6a9b1);
+  static const textOffWhite = Color.fromRGBO(238, 238, 238, 1);
+  static const textColorGrey = Colors.grey;
+  static const textColorBlack = Colors.black;
+  static const textColorLightBlack = Color.fromRGBO(0, 0, 0, 0.541);
 
   static const textColorOnboarding = Color(0xffc67b22);
 
-  static const profileCardColor = Colors.orange;
+  static const profileCardColor = Color(0xffFABE30);
 
   static const lineBorderColor = Color.fromARGB(50, 168, 227, 255);
 

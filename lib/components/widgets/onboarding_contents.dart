@@ -84,7 +84,7 @@ class OnboardingContents extends StatelessWidget {
                   const Padding(
                     padding: EdgeInsets.only(top: 8),
                     child: Text(
-                      'Here we encourage every skill and "quess what" you get paid for doing what you love. ',
+                      'Here we encourage every skill and "Guess what" you get paid for doing what you love. ',
                       textAlign: TextAlign.center,
                       softWrap: true,
                       style: TextStyle(

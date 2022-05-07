@@ -20,14 +20,16 @@ class DashboardAppBar extends StatelessWidget {
             Text(
               'Hello Kreation!',
               style: kMediumTextStyle.copyWith(
-                  color: AppColors.textColor,
-                  fontWeight: FontWeight.w700,
-                  wordSpacing: 1,
-                  letterSpacing: 2),
+                  color: AppColors.textColorBlack,
+                  fontFamily: kSmallAltFontFamily,
+                  fontWeight: FontWeight.w400,
+                  fontSize: 22,
+                  wordSpacing: 0,
+                  letterSpacing: 0),
             ),
             Row(
-              children: const [
-                Text('🇳🇬 ', style: TextStyle(
+              children: [
+                const Text('🇳🇬 ', style: TextStyle(
                   fontSize: 20,
                 ),),
                 Text(

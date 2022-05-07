@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'appcolors.dart';
 
 //Images Constants
-const String kCartoonBoy = 'assets/images/cartoon1.png';
+const String kCartoonBoy = 'assets/images/cartoonBoy.png';
 const String kProfileImageMale = 'assets/images/profile.png';
 const String kFemaleProfileImage = 'assets/images/femaleprofile.png';
 const String kGooglelogo = 'assets/images/logos/googlelogo.png';
@@ -13,10 +13,18 @@ const String kHumansCharacters = 'assets/images/humanCharacters.png';
 const String kForgotPassword = 'assets/images/forgotpassword.png';
 const String kWorkForcelogo = 'assets/images/logos/workforcelogo.png';
 
+//Money Image Constants
+const String kWallet = 'assets/images/money/wallet.png';
+const String kMoney = 'assets/images/money/moneyGold.png';
+const String kDollarCoin = 'assets/images/money/dollarCoin.png';
+const String kEuroCoin = 'assets/images/money/EuroGold.png';
+
 //Fonts contants
 const String kLargefontFamily1 = 'Fredoka';
 const String kLargefontFamily2 = 'PermanentMarker';
 const String kSmallfontFamily = 'Yanone';
+const String kSmallAltFontFamily = 'Josefin';
+const String kTextFontFamily = 'RadioCanada';
 
 //Other Constants
 
@@ -28,11 +36,11 @@ const kWelcomeCardStyle = BoxDecoration(
         topRight: Radius.circular(15)));
 
 const kDashboardCardDecoration = BoxDecoration(
-    borderRadius: kBorderRadius,
+    borderRadius: BorderRadius.all(Radius.circular(20)),
     gradient: LinearGradient(colors: [
       AppColors.smallCardColor,
-      AppColors.backgroundColor,
-    ], begin: Alignment.topLeft, end: Alignment.bottomRight));
+      AppColors.smallCardColorlight,
+    ], begin: Alignment.bottomRight, end: Alignment.topLeft));
 
 const kLargeTextStyle = TextStyle(
     color: AppColors.textColor,
@@ -47,10 +55,10 @@ const kMediumTextStyle = TextStyle(
     fontFamily: kSmallfontFamily);
 
 const kSmallTextStyle = TextStyle(
-  color: AppColors.smalltextColor,
-  fontSize: 20,
-  letterSpacing: 1.5,
-  fontFamily: kSmallfontFamily,
+  color: AppColors.textColorLightBlack,
+  fontSize: 16,
+  letterSpacing: 1,
+  fontFamily: kSmallAltFontFamily,
 );
 
 const kButtonTextStyle = TextStyle(
