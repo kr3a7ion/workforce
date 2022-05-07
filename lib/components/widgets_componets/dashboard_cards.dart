@@ -13,7 +13,7 @@ class DashboardCard extends StatelessWidget {
     return Expanded(
       flex: flexV!,
       child: Container(
-        height: 220,
+        height: 240,
         child: child,
         decoration: decorations,
       ),

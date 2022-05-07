@@ -12,6 +12,7 @@ const String kFacebooklogo = 'assets/images/logos/facebooklogo.png';
 const String kHumansCharacters = 'assets/images/humanCharacters.png';
 const String kForgotPassword = 'assets/images/forgotpassword.png';
 const String kWorkForcelogo = 'assets/images/logos/workforcelogo.png';
+const String kDashBoardChart = 'assets/images/Chart.png';
 
 //Money Image Constants
 const String kWallet = 'assets/images/money/wallet.png';
@@ -56,9 +57,9 @@ const kMediumTextStyle = TextStyle(
 
 const kSmallTextStyle = TextStyle(
   color: AppColors.textColorLightBlack,
-  fontSize: 16,
+  fontSize: 20,
   letterSpacing: 1,
-  fontFamily: kSmallAltFontFamily,
+  fontFamily: kTextFontFamily,
 );
 
 const kButtonTextStyle = TextStyle(

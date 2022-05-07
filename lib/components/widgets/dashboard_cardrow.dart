@@ -13,67 +13,148 @@ class CardRow extends StatelessWidget {
     return Row(
       children: [
         DashboardCard(
-          flexV: 5,
-          decorations: kDashboardCardDecoration,
-          child: Padding(
-            padding: const EdgeInsets.all(15),
-            child: Column(
+            flexV: 5,
+            decorations: kDashboardCardDecoration,
+            child: Stack(
+              clipBehavior: Clip.none,
               children: [
-                Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text('Earning',
-                          style: kSmallTextStyle.copyWith(
-                              color: AppColors.textOffWhite)),
-                      const SizedBox(
-                          height: 20,
-                          child: Icon(
-                            Icons.arrow_forward_ios,
-                            size: 14,
+                Padding(
+                  padding: const EdgeInsets.all(15),
+                  child: Column(children: [
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text('Earning',
+                              style: kSmallTextStyle.copyWith(
+                                  color: AppColors.textOffWhite,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: kTextFontFamily)),
+                          const SizedBox(
+                              height: 20,
+                              child: Icon(
+                                Icons.arrow_forward_ios,
+                                size: 14,
+                                color: AppColors.textOffWhite,
+                              ))
+                        ]),
+                    const SizedBox(height: 20),
+                    Row(children: [
+                      Text(
+                        currency!,
+                        style: const TextStyle(
+                            fontSize: 30,
                             color: AppColors.textOffWhite,
-                          ))
+                            fontFamily: kSmallAltFontFamily),
+                      ),
+                      const SizedBox(width: 10),
+                      const Text('12,808',
+                          style: TextStyle(
+                              fontSize: 28,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: kTextFontFamily,
+                              color: AppColors.pureWhiteBackground))
                     ]),
-                const SizedBox(height: 20),
-                Row(children: [
-                  Text(
-                    currency!,
-                    style: const TextStyle(
-                        fontSize: 28,
-                        color: AppColors.textOffWhite,
-                        fontFamily: kSmallAltFontFamily),
-                  ),
-                  const SizedBox(width: 10),
-                  const Text('12,808',
-                      style: TextStyle(
-                          fontSize: 28,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: kTextFontFamily,
-                          color: AppColors.pureWhiteBackground))
-                ]),
-                Stack(
-                  clipBehavior: Clip.none,
-                  children: [
-                  SizedBox(
-                    height: 100,
-                   /// width: 100,
-                    child: FittedBox(
+                  ]),
+                ),
+                Positioned(
+                  bottom: -40,
+                  left: 20,
+                  child: FittedBox(
                       fit: BoxFit.contain,
-                      child: Image.asset(kWallet)),
-                  ),
-                  ],
-                )
+                      child:
+                          SizedBox(height: 180, child: Image.asset(kWallet))),
+                ),
+                Positioned(
+                  bottom: 75,
+                  left: 140,
+                  child: FittedBox(
+                      fit: BoxFit.contain,
+                      child: SizedBox(height: 55, child: Image.asset(kMoney))),
+                ),
+                Positioned(
+                  bottom: 100,
+                  left: 100,
+                  child: FittedBox(
+                      fit: BoxFit.contain,
+                      child: SizedBox(height: 40, child: Image.asset(kMoney))),
+                ),
+                Positioned(
+                  bottom: 120,
+                  left: 140,
+                  child: FittedBox(
+                      fit: BoxFit.contain,
+                      child: SizedBox(height: 40, child: Image.asset(kMoney))),
+                ),
               ],
-            ),
-          ),
-        ),
-        const SizedBox(width: 10),
-        const DashboardCard(
+            )),
+        const SizedBox(width: 12),
+        DashboardCard(
             flexV: 4,
-            decorations: BoxDecoration(
+            decorations: const BoxDecoration(
                 color: AppColors.pureWhiteBackground,
                 borderRadius: BorderRadius.all(
                   Radius.circular(20),
-                )))
+                )),
+            child: Stack(
+              clipBehavior: Clip.none,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(15),
+                  child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text('Statistic',
+                                  style: kSmallTextStyle.copyWith(
+                                    color: AppColors.backgroundColorButtom,
+                                    fontWeight: FontWeight.bold,
+                                  )),
+                              const SizedBox(
+                                  height: 20,
+                                  child: Icon(
+                                    Icons.arrow_forward_ios,
+                                    size: 16,
+                                    color: AppColors.textColorGrey,
+                                  ))
+                            ]),
+                        const SizedBox(height: 20),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            const Text('1000+',
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    fontFamily: kTextFontFamily,
+                                    color: AppColors.backgroundColorButtom)),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            FittedBox(
+                              fit: BoxFit.contain,
+                              child: Text(
+                                'Hours',
+                                style: kSmallTextStyle.copyWith(
+                                  fontSize: 14,
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ]),
+                ),
+                Positioned(
+                  bottom: -1,
+                  left: 15,
+                  child: FittedBox(
+                      fit: BoxFit.contain,
+                      child: SizedBox(
+                          height: 130, child: Image.asset(kDashBoardChart))),
+                ),
+              ],
+            ))
       ],
     );
   }

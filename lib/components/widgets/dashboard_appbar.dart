@@ -22,10 +22,10 @@ class DashboardAppBar extends StatelessWidget {
               style: kMediumTextStyle.copyWith(
                   color: AppColors.textColorBlack,
                   fontFamily: kSmallAltFontFamily,
-                  fontWeight: FontWeight.w400,
+                  fontWeight: FontWeight.w800,
                   fontSize: 22,
                   wordSpacing: 0,
-                  letterSpacing: 0),
+                  letterSpacing: 0.2),
             ),
             Row(
               children: [
@@ -33,7 +33,9 @@ class DashboardAppBar extends StatelessWidget {
                   fontSize: 20,
                 ),),
                 Text(
-                  'Abuja, Nigeria', style: kSmallTextStyle,
+                  'Abuja, Nigeria', style: kSmallTextStyle.copyWith(
+                    fontSize: 15
+                  ),
                 ),
               ],
             )
