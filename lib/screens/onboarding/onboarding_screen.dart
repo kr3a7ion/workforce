@@ -11,6 +11,8 @@ class OnboardingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
+        clipBehavior: Clip.none,
+        fit: StackFit.loose,
         children: const [
           Onboardingbackground(),
           OnboardingContents()

@@ -54,7 +54,7 @@ class RegistrationScreen extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 30, right: 30, bottom: 80),
+            padding: const EdgeInsets.only(left: 30, right: 30),
             child: Column(
               children: [
                 kSpace20,

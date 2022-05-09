@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:workforce/components/widgets_componets/dashboard_cards.dart';
+import 'package:workforce/components/widgets_componets/custom_card.dart';
 import 'package:workforce/constants/appcolors.dart';
 import 'package:workforce/constants/constants.dart';
 
@@ -12,7 +12,7 @@ class CardRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        DashboardCard(
+        CustomCard(
             flexV: 5,
             decorations: kDashboardCardDecoration,
             child: Stack(
@@ -57,30 +57,30 @@ class CardRow extends StatelessWidget {
                   ]),
                 ),
                 Positioned(
-                  bottom: -40,
-                  left: 20,
+                  bottom: -35,
+                  left: 12,
                   child: FittedBox(
                       fit: BoxFit.contain,
                       child:
-                          SizedBox(height: 180, child: Image.asset(kWallet))),
+                          SizedBox(height: 170, child: Image.asset(kWallet))),
                 ),
                 Positioned(
                   bottom: 75,
-                  left: 140,
+                  left: 120,
                   child: FittedBox(
                       fit: BoxFit.contain,
                       child: SizedBox(height: 55, child: Image.asset(kMoney))),
                 ),
                 Positioned(
                   bottom: 100,
-                  left: 100,
+                  left: 80,
                   child: FittedBox(
                       fit: BoxFit.contain,
                       child: SizedBox(height: 40, child: Image.asset(kMoney))),
                 ),
                 Positioned(
                   bottom: 120,
-                  left: 140,
+                  left: 120,
                   child: FittedBox(
                       fit: BoxFit.contain,
                       child: SizedBox(height: 40, child: Image.asset(kMoney))),
@@ -88,7 +88,7 @@ class CardRow extends StatelessWidget {
               ],
             )),
         const SizedBox(width: 12),
-        DashboardCard(
+        CustomCard(
             flexV: 4,
             decorations: const BoxDecoration(
                 color: AppColors.pureWhiteBackground,

@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 
-class DashboardCard extends StatelessWidget {
-  const DashboardCard({Key? key, this.decorations, this.child, this.flexV})
+class CustomCard extends StatelessWidget {
+  const CustomCard({Key? key, this.decorations, this.child, this.flexV, this.height=240})
       : super(key: key);
 
   final Decoration? decorations;
   final Widget? child;
   final int? flexV;
+  final double height;
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       flex: flexV!,
       child: Container(
-        height: 240,
+        height: height,
         child: child,
         decoration: decorations,
       ),

@@ -11,9 +11,9 @@ class DashboardAppBar extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const ProfileIcon(
+        ProfileIcon(
           cardColor: AppColors.profileCardColor,
-          profileImage: kFemaleProfileImage,
+          child: Image.asset(kFemaleProfileImage),
         ),
         Column(
           children: [

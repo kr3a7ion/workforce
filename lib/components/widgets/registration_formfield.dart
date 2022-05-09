@@ -35,24 +35,21 @@ class RegistrationFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Form(
-        child: SingleChildScrollView(
-          clipBehavior: Clip.none,
-          child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-          buildForm(label: firtName, textFieldType: TextInputType.name),
-          buildForm(label: lastName, textFieldType: TextInputType.name),
-          buildForm(label: emailLabel, textFieldType: TextInputType.emailAddress),
-          PhoneCountryFormField(
-            phoneNumber: phoneNumber,
-            initailCountry: initailCountry,
-          ),
-          const SizedBox(height: 40),
-          const LargeButton(
-            label: 'Sign Up',
-          )
-              ],
-            ),
-        ));
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+        buildForm(label: firtName, textFieldType: TextInputType.name),
+        buildForm(label: lastName, textFieldType: TextInputType.name),
+        buildForm(label: emailLabel, textFieldType: TextInputType.emailAddress),
+        PhoneCountryFormField(
+          phoneNumber: phoneNumber,
+          initailCountry: initailCountry,
+        ),
+        const SizedBox(height: 30),
+        const LargeButton(
+          label: 'Sign Up',
+        )
+            ],
+          ));
   }
 }

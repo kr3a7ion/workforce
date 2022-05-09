@@ -39,6 +39,7 @@ class AppColors {
 
   static const signTextColor = Color(0xffa6a9b1);
   static const textOffWhite = Color.fromARGB(255, 243, 243, 243);
+  static const textOffWhiteDark = Color.fromARGB(255, 238, 238, 238);
   static const textColorGrey = Colors.grey;
   static const textColorBlack = Colors.black;
   static const textColorLightBlack = Color.fromRGBO(0, 0, 0, 0.541);
