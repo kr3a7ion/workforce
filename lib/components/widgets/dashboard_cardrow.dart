@@ -28,6 +28,7 @@ class CardRow extends StatelessWidget {
                               style: kSmallTextStyle.copyWith(
                                   color: AppColors.textOffWhite,
                                   fontWeight: FontWeight.bold,
+                                  fontSize: 16,
                                   fontFamily: kTextFontFamily)),
                           const SizedBox(
                               height: 20,
@@ -110,6 +111,7 @@ class CardRow extends StatelessWidget {
                                   style: kSmallTextStyle.copyWith(
                                     color: AppColors.backgroundColorButtom,
                                     fontWeight: FontWeight.bold,
+                                    fontSize: 16
                                   )),
                               const SizedBox(
                                   height: 20,
@@ -128,7 +130,7 @@ class CardRow extends StatelessWidget {
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold,
                                     fontFamily: kTextFontFamily,
-                                    color: AppColors.backgroundColorButtom)),
+                                    color: AppColors.smallCardColor)),
                             const SizedBox(
                               width: 10,
                             ),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:workforce/constants/appcolors.dart';
-import 'package:workforce/constants/constants.dart';
 
 class CustomCardTile extends StatelessWidget {
   const CustomCardTile({Key? key, this.child}) : super(key: key);
@@ -13,6 +12,7 @@ class CustomCardTile extends StatelessWidget {
       children: [
         Expanded(
           child: Container(
+            padding: const EdgeInsets.only(right: 13),
             child: child,
           decoration:const BoxDecoration(
             color: AppColors.pureWhiteBackground,

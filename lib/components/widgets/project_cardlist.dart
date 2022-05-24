@@ -17,10 +17,10 @@ class CardTileList extends StatelessWidget {
         CustomCardTile(
           child: Column(children: [
             ListTile(
-                contentPadding: const EdgeInsets.all(13),
+                contentPadding: const EdgeInsets.only(left: 13, top: 13, bottom: 13),
                 leading: MiniCardText(
                   cardDecoration: BoxDecoration(
-                      color: Colors.indigoAccent,
+                      color: Colors.limeAccent,
                       borderRadius: BorderRadius.circular(100)),
                   child: Padding(
                     padding: const EdgeInsets.all(6),
@@ -64,7 +64,7 @@ class CardTileList extends StatelessWidget {
                                     child: Text(
                                       'Design',
                                       style: kSmallTextStyle.copyWith(
-                                          fontSize: 12,
+                                          fontSize: 10,
                                           color: const Color.fromARGB(
                                               255, 0, 140, 255)),
                                     ))))
@@ -125,6 +125,14 @@ class CardTileList extends StatelessWidget {
                             color: AppColors.backgroundColorButtom,
                             fontWeight: FontWeight.w500
                           )),
+
+                          const Spacer(),
+                          Text('9 May', style: kMediumTextStyle.copyWith(
+                            fontSize: 16,
+                            letterSpacing: 1,
+                            color: AppColors.backgroundColorButtom,
+                            fontWeight: FontWeight.w500
+                          ))
                       ],
                     )
                   ]),

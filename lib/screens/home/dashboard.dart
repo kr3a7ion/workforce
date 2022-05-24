@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:workforce/components/widgets/dashboard_appbar.dart';
 import 'package:workforce/components/widgets/dashboard_cardrow.dart';
+import 'package:workforce/components/widgets/navigation_bar.dart';
 import 'package:workforce/components/widgets/project_cardlist.dart';
 import 'package:workforce/constants/appcolors.dart';
 import 'package:workforce/constants/constants.dart';
@@ -52,10 +53,13 @@ class _DashboardState extends State<Dashboard> {
               const CardTileList(),
               kSpace10,
               const CardTileList(),
+
+              //const CustomNavigationBar(),
             ],
           ),
         ),
       ),
+      bottomNavigationBar: const CustomNavigationBar(),
     );
   }
 }

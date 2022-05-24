@@ -39,7 +39,7 @@ const kWelcomeCardStyle = BoxDecoration(
 const kDashboardCardDecoration = BoxDecoration(
     borderRadius: BorderRadius.all(Radius.circular(20)),
     gradient: LinearGradient(colors: [
-      AppColors.smallCardColor,
+      Color.fromARGB(255, 35, 123, 206),
       AppColors.smallCardColorlight,
     ], begin: Alignment.bottomRight, end: Alignment.topLeft));
 
