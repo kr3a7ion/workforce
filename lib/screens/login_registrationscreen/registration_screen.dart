@@ -20,7 +20,7 @@ class RegistrationScreen extends StatelessWidget {
         children: [
           Container(
             width: double.infinity,
-            height: 180,
+            height: 160,
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
                 gradient: const LinearGradient(colors: [
@@ -39,7 +39,6 @@ class RegistrationScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                kSpace20,
                 Text(
                   'Create Account',
                   style: kMediumTextStyle.copyWith(
@@ -52,12 +51,13 @@ class RegistrationScreen extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 30, right: 30),
+            padding: const EdgeInsets.only(left: 20, right: 20, bottom: 5),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const SizedBox(height: 30),
+                kSpace20,
                 const RegistrationFormField(),
-                const SizedBox(height: 30),
+                kSpace20,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -67,7 +67,6 @@ class RegistrationScreen extends StatelessWidget {
                     clickableText(
                         text: 'Login Instead',
                         ontapped: () {
-                          //Implement Register Button
                           Navigator.pushReplacementNamed(
                               context, LoginScreen.loginscreenId);
                         },

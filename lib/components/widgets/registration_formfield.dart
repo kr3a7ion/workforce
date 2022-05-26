@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:workforce/components/widgets/phone_countryformfield.dart';
+import 'package:workforce/constants/constants.dart';
 
 import '../widgets_componets/custom_textfield.dart';
 import '../widgets_componets/signin_button.dart';
 
 class RegistrationFormField extends StatelessWidget {
   const RegistrationFormField({Key? key}) : super(key: key);
+  final String userName = 'UserName';
   final String firtName = 'First Name';
   final String lastName = 'Last Name';
   final String emailLabel = 'Email';
@@ -36,8 +38,9 @@ class RegistrationFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Form(
         child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        buildForm(label: userName, textFieldType: TextInputType.name),
         buildForm(label: firtName, textFieldType: TextInputType.name),
         buildForm(label: lastName, textFieldType: TextInputType.name),
         buildForm(label: emailLabel, textFieldType: TextInputType.emailAddress),
@@ -45,11 +48,11 @@ class RegistrationFormField extends StatelessWidget {
           phoneNumber: phoneNumber,
           initailCountry: initailCountry,
         ),
-        const SizedBox(height: 30),
+        kSpace20,
         const LargeButton(
           label: 'Sign Up',
         )
-            ],
-          ));
+      ],
+    ));
   }
 }

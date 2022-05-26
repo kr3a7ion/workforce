@@ -10,6 +10,9 @@ class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
 
   static const String dashboardId = '/DashboardScreen';
+  final String displayUsername = 'Gideon';
+  final String displayProfileIcon = kFemaleProfileImage;
+  final bool showNotificationBadge = true;
 
   @override
   State<Dashboard> createState() => _DashboardState();
@@ -22,10 +25,15 @@ class _DashboardState extends State<Dashboard> {
       backgroundColor: AppColors.whiteBackground,
       body: SingleChildScrollView(
         clipBehavior: Clip.none,
-        padding: const EdgeInsets.only(left: 15, right: 15, top: 20, bottom: 20),
+        padding:
+            const EdgeInsets.only(left: 15, right: 15, top: 20, bottom: 20),
         child: Column(
           children: [
-            const DashboardAppBar(),
+            DashboardAppBar(
+              displayUsername: widget.displayUsername,
+              displayProfileIcon: widget.displayProfileIcon,
+              showNotificatioBadge: widget.showNotificationBadge,
+            ),
             const SizedBox(height: 30),
             CardRow(
               currency: '\$',

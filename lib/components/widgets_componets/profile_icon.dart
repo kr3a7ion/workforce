@@ -30,11 +30,11 @@ class ProfileIcon extends StatelessWidget {
 
 class NotificationCard extends StatelessWidget {
   const NotificationCard(
-      {Key? key, required this.cardColor, required this.profileIcon})
+      {Key? key, required this.cardColor, required this.child})
       : super(key: key);
 
   final Color cardColor;
-  final IconData profileIcon;
+  final Widget child;
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +45,7 @@ class NotificationCard extends StatelessWidget {
       decoration: BoxDecoration(
           color: cardColor,
           borderRadius: const BorderRadius.all(Radius.circular(15))),
-      child: Icon(profileIcon),
+      child: child,
     );
   }
 }
