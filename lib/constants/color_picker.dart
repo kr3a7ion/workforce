@@ -20,20 +20,20 @@ Color(0xff9966CC),
 Color(0xff006400),
 //Cornsilk
 Color(0xffFFF8DC),
-Pale Goldenrod
-#EEE8AA
-Dark Violet
-#9400D3
-Medium Slate Blue
-#7B68EE
-Lime
-#00FF00
-Thistle
-#D8BFD8
-Blue Violet
-#8A2BE2
-Red
-#FF0000
+//Pale Goldenrod
+(EEE8AA)
+//Dark Violet
+(9400D3)
+//Medium Slate Blue
+(7B68EE)
+//Lime
+(00FF00)
+//Thistle
+(D8BFD8)
+//Blue Violet
+(8A2BE2)
+//Red
+(FF0000)
 Dark Turquoise
 #00CED1
 Steel Blue
