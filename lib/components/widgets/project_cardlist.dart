@@ -6,8 +6,15 @@ import 'package:workforce/constants/appcolors.dart';
 import 'package:workforce/constants/constants.dart';
 
 class CardTileList extends StatelessWidget {
-  const CardTileList({Key? key}) : super(key: key);
+  CardTileList({Key? key}) : super(key: key);
 
+  final colorPick = <Color>[
+    Colors.limeAccent,
+    Colors.purpleAccent,
+    Colors.greenAccent,
+    const Color.fromARGB(255, 179, 255, 0),
+    const Color.fromARGB(255, 59, 255, 173)
+  ];
 
 
   @override
@@ -17,7 +24,8 @@ class CardTileList extends StatelessWidget {
         CustomCardTile(
           child: Column(children: [
             ListTile(
-                contentPadding: const EdgeInsets.only(left: 13, top: 13, bottom: 13),
+                contentPadding:
+                    const EdgeInsets.only(left: 13, top: 13, bottom: 13),
                 leading: MiniCardText(
                   cardDecoration: BoxDecoration(
                       color: Colors.limeAccent,
@@ -45,9 +53,7 @@ class CardTileList extends StatelessWidget {
                         Text(
                           'Kreattech Ltd',
                           style: kSmallTextStyle.copyWith(
-                            fontSize: 14,
-                            letterSpacing: 0
-                          ),
+                              fontSize: 14, letterSpacing: 0),
                         ),
                         const SizedBox(width: 10),
                         MiniCardText(
@@ -85,17 +91,24 @@ class CardTileList extends StatelessWidget {
                 width: 45,
                 cardColor: AppColors.textOffWhiteDark,
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: const [Text('18', style: TextStyle(
-                  color: AppColors.textColor,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600
-                ),), Text('days', style: TextStyle(
-                  fontSize: 13,
-                  color: AppColors.textColor,
-                  fontWeight: FontWeight.w400
-                ),)]),
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: const [
+                      Text(
+                        '18',
+                        style: TextStyle(
+                            color: AppColors.textColor,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600),
+                      ),
+                      Text(
+                        'days',
+                        style: TextStyle(
+                            fontSize: 13,
+                            color: AppColors.textColor,
+                            fontWeight: FontWeight.w400),
+                      )
+                    ]),
               ),
               title: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -103,10 +116,9 @@ class CardTileList extends StatelessWidget {
                     Text(
                       'Next Task',
                       style: kSmallTextStyle.copyWith(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500,
-                        letterSpacing: 0.4
-                      ),
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                          letterSpacing: 0.4),
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -119,20 +131,19 @@ class CardTileList extends StatelessWidget {
                               fontSize: 20,
                               color: Colors.greenAccent),
                         ),
-                        Text(' Prepering live prototype', style: kMediumTextStyle.copyWith(
-                            fontSize: 16,
-                            letterSpacing: 1,
-                            color: AppColors.backgroundColorButtom,
-                            fontWeight: FontWeight.w500
-                          )),
-
-                          const Spacer(),
-                          Text('9 May', style: kMediumTextStyle.copyWith(
-                            fontSize: 16,
-                            letterSpacing: 1,
-                            color: AppColors.backgroundColorButtom,
-                            fontWeight: FontWeight.w500
-                          ))
+                        Text(' Prepering live prototype',
+                            style: kMediumTextStyle.copyWith(
+                                fontSize: 16,
+                                letterSpacing: 1,
+                                color: AppColors.backgroundColorButtom,
+                                fontWeight: FontWeight.w500)),
+                        const Spacer(),
+                        Text('9 May',
+                            style: kMediumTextStyle.copyWith(
+                                fontSize: 16,
+                                letterSpacing: 1,
+                                color: AppColors.backgroundColorButtom,
+                                fontWeight: FontWeight.w500))
                       ],
                     )
                   ]),

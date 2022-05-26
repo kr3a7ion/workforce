@@ -13,6 +13,7 @@ const String kHumansCharacters = 'assets/images/humanCharacters.png';
 const String kForgotPassword = 'assets/images/forgotpassword.png';
 const String kWorkForcelogo = 'assets/images/logos/workforcelogo.png';
 const String kDashBoardChart = 'assets/images/Chart.png';
+const String kBehanceLogo = 'assets/images/logos/behancelogo.png';
 
 //Money Image Constants
 const String kWallet = 'assets/images/money/wallet.png';

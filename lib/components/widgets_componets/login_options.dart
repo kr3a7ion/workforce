@@ -1,32 +1,20 @@
 import 'package:flutter/material.dart';
 
-import '../../constants/appcolors.dart';
-import '../../constants/constants.dart';
-
 class LoginOptions extends StatelessWidget {
   const LoginOptions({
-    Key? key, required this.imageasset
+    Key? key, required this.imageasset, required this.ontap
   }) : super(key: key);
 
   final String? imageasset;
+  final Function()? ontap;
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: Container(
-        height: 70,
-        width: 90,
-        decoration: BoxDecoration(
-          borderRadius: kBorderRadius,
-          color: AppColors.gradient3,
-          border: Border.all(width: 2, color: AppColors.gradient2),
-        ),
-        child: Center(
-          child: Image.asset(
-            imageasset!,
-            height: 50,
-            width: 50,
-          ),
+      child: GestureDetector(
+        onTap: ontap,
+        child: Image.asset(
+          imageasset!, fit: BoxFit.contain,
         ),
       ),
     );

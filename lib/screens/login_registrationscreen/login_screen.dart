@@ -6,6 +6,7 @@ import 'package:workforce/screens/home/dashboard.dart';
 import 'package:workforce/screens/login_registrationscreen/password_recovery_screen.dart';
 import 'package:workforce/screens/login_registrationscreen/registration_screen.dart';
 
+import '../../components/widgets_componets/clickable_text.dart';
 import '../../components/widgets_componets/custom_divider.dart';
 import '../../components/widgets_componets/login_options.dart';
 import '../../components/widgets_componets/signin_button.dart';
@@ -21,15 +22,26 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   var signInlogo = <String>[
     kGooglelogo,
-    kApplelogo,
+    kBehanceLogo,
     kFacebooklogo,
   ];
 
-  logoGen() {
+  List signUrl = <String>[
+    'facebook.com',
+    'google.com',
+    'behanceUrl',
+  ];
+
+  List logoGen() {
     var genRowimage = <Widget>[];
     for (var item in signInlogo) {
-      genRowimage.add(LoginOptions(imageasset: item));
-      genRowimage.add(const SizedBox(width: 5));
+      genRowimage.add(LoginOptions(
+        imageasset: item,
+        ontap: () {
+          print(signUrl[signInlogo.indexOf(item)]);
+          // Implement ontap function for each login Options
+        },
+      ));
     }
     return genRowimage;
   }
@@ -125,7 +137,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       text: 'Register now',
                       ontapped: () {
                         //Implement Register Button
-                        Navigator.pushNamed(
+                        Navigator.pushReplacementNamed(
                             context, RegistrationScreen.registrationScreenId);
                       },
                       style: kMediumTextStyle.copyWith(
@@ -139,19 +151,4 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  GestureDetector clickableText(
-      {required String text,
-      required void Function() ontapped,
-      TextStyle? style = kMediumTextStyle}) {
-    return GestureDetector(
-      onTap: ontapped,
-      child: FittedBox(
-        fit: BoxFit.contain,
-        child: Text(
-          text,
-          style: style,
-        ),
-      ),
-    );
-  }
 }

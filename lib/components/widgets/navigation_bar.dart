@@ -11,7 +11,7 @@ class CustomNavigationBar extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.only(left: 15, right: 15, bottom: 20),
             child: Container(
-              height: 90,
+              height: 80,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(23),
                 color: const Color.fromARGB(255, 24, 24, 24),

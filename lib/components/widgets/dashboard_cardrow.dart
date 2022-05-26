@@ -4,9 +4,11 @@ import 'package:workforce/constants/appcolors.dart';
 import 'package:workforce/constants/constants.dart';
 
 class CardRow extends StatelessWidget {
-  const CardRow({Key? key, this.currency}) : super(key: key);
+  CardRow({Key? key, this.currency}) : super(key: key);
 
   final String? currency;
+
+  final Widget moneyImage = Image.asset(kMoney);
 
   @override
   Widget build(BuildContext context) {
@@ -60,31 +62,22 @@ class CardRow extends StatelessWidget {
                 Positioned(
                   bottom: -35,
                   left: 12,
-                  child: FittedBox(
-                      fit: BoxFit.contain,
-                      child:
-                          SizedBox(height: 170, child: Image.asset(kWallet))),
+                  child: SizedBox(height: 170, child: Image.asset(kWallet)),
                 ),
                 Positioned(
                   bottom: 75,
                   left: 120,
-                  child: FittedBox(
-                      fit: BoxFit.contain,
-                      child: SizedBox(height: 55, child: Image.asset(kMoney))),
+                  child: SizedBox(height: 55, child: moneyImage),
                 ),
                 Positioned(
                   bottom: 100,
                   left: 80,
-                  child: FittedBox(
-                      fit: BoxFit.contain,
-                      child: SizedBox(height: 40, child: Image.asset(kMoney))),
+                  child: SizedBox(height: 40, child: moneyImage),
                 ),
                 Positioned(
                   bottom: 120,
                   left: 120,
-                  child: FittedBox(
-                      fit: BoxFit.contain,
-                      child: SizedBox(height: 40, child: Image.asset(kMoney))),
+                  child: SizedBox(height: 40, child: moneyImage),
                 ),
               ],
             )),
@@ -109,10 +102,9 @@ class CardRow extends StatelessWidget {
                             children: [
                               Text('Statistic',
                                   style: kSmallTextStyle.copyWith(
-                                    color: AppColors.backgroundColorButtom,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 16
-                                  )),
+                                      color: AppColors.backgroundColorButtom,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16)),
                               const SizedBox(
                                   height: 20,
                                   child: Icon(
@@ -150,10 +142,8 @@ class CardRow extends StatelessWidget {
                 Positioned(
                   bottom: -1,
                   left: 15,
-                  child: FittedBox(
-                      fit: BoxFit.contain,
-                      child: SizedBox(
-                          height: 130, child: Image.asset(kDashBoardChart))),
+                  child: SizedBox(
+                      height: 130, child: Image.asset(kDashBoardChart)),
                 ),
               ],
             ))

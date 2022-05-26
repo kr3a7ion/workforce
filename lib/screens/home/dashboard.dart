@@ -22,41 +22,36 @@ class _DashboardState extends State<Dashboard> {
       backgroundColor: AppColors.whiteBackground,
       body: SingleChildScrollView(
         clipBehavior: Clip.none,
-        child: Padding(
-          padding:
-              const EdgeInsets.only(left: 15, right: 15, top: 20, bottom: 20),
-          child: Column(
-            children: [
-              const DashboardAppBar(),
-              const SizedBox(height: 30),
-              const CardRow(
-                currency: '\$',
-              ),
-              const SizedBox(height: 30),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text('Projects',
-                      style: kSmallTextStyle.copyWith(
-                        color: AppColors.backgroundColorButtom,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      )),
-                  Text(
-                    'See all',
+        padding: const EdgeInsets.only(left: 15, right: 15, top: 20, bottom: 20),
+        child: Column(
+          children: [
+            const DashboardAppBar(),
+            const SizedBox(height: 30),
+            CardRow(
+              currency: '\$',
+            ),
+            const SizedBox(height: 30),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Projects',
                     style: kSmallTextStyle.copyWith(
-                        color: AppColors.smallCardColor, fontSize: 16),
-                  )
-                ],
-              ),
-              kSpace20,
-              const CardTileList(),
-              kSpace10,
-              const CardTileList(),
-
-              //const CustomNavigationBar(),
-            ],
-          ),
+                      color: AppColors.backgroundColorButtom,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    )),
+                Text(
+                  'See all',
+                  style: kSmallTextStyle.copyWith(
+                      color: AppColors.smallCardColor, fontSize: 16),
+                )
+              ],
+            ),
+            kSpace20,
+            CardTileList(),
+            kSpace10,
+            CardTileList(),
+          ],
         ),
       ),
       bottomNavigationBar: const CustomNavigationBar(),

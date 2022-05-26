@@ -4,9 +4,12 @@ import 'package:workforce/constants/appcolors.dart';
 import 'package:workforce/constants/constants.dart';
 import 'package:workforce/screens/login_registrationscreen/login_screen.dart';
 
+import '../../components/widgets_componets/clickable_text.dart';
+
 class RegistrationScreen extends StatelessWidget {
   static const String registrationScreenId = '/RegistrationScreen';
   const RegistrationScreen({Key? key}) : super(key: key);
+  final double topContainerRadius = 100;
 
   @override
   Widget build(BuildContext context) {
@@ -17,38 +20,33 @@ class RegistrationScreen extends StatelessWidget {
         children: [
           Container(
             width: double.infinity,
-            height: 200,
+            height: 180,
             padding: const EdgeInsets.all(10),
-            decoration: const BoxDecoration(
-                gradient: LinearGradient(colors: [
+            decoration: BoxDecoration(
+                gradient: const LinearGradient(colors: [
                   AppColors.backgroundColorTop,
                   AppColors.backgroundColorTop,
-                  AppColors.backgroundColorButtom,
+                  Color.fromARGB(255, 49, 53, 80),
                 ], begin: Alignment.topCenter, end: Alignment.bottomCenter),
                 borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(30),
-                    bottomRight: Radius.circular(30)),
-                image: DecorationImage(
+                    bottomLeft: Radius.circular(topContainerRadius),
+                    bottomRight: Radius.circular(topContainerRadius)),
+                image: const DecorationImage(
                     image: AssetImage(kHumansCharacters),
                     alignment: Alignment.center,
                     fit: BoxFit.cover)),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                GestureDetector(
-                    onTap: () =>
-                        Navigator.pushNamed(context, LoginScreen.loginscreenId),
-                    child: kBackButton),
                 kSpace20,
-                Center(
-                  child: Text(
-                    'Create Account',
-                    style: kMediumTextStyle.copyWith(
-                        color: AppColors.textColor,
-                        fontSize: 45,
-                        fontWeight: FontWeight.bold,
-                        letterSpacing: 2),
-                  ),
+                Text(
+                  'Create Account',
+                  style: kMediumTextStyle.copyWith(
+                      color: AppColors.textColor,
+                      fontSize: 45,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 2),
                 ),
               ],
             ),
@@ -57,17 +55,26 @@ class RegistrationScreen extends StatelessWidget {
             padding: const EdgeInsets.only(left: 30, right: 30),
             child: Column(
               children: [
-                kSpace20,
-                Text(
-                  'Fill in the information below',
-                  style: Theme.of(context).textTheme.displayMedium!.copyWith(
-                      fontSize: 22,
-                      fontFamily: kLargefontFamily1,
-                      letterSpacing: 1,
-                      color: AppColors.textColorOnboarding),
-                ),
-                kSpace10,
+                const SizedBox(height: 30),
                 const RegistrationFormField(),
+                const SizedBox(height: 30),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Flexible(
+                        child: Text('Already a member? ',
+                            style: kMediumTextStyle)),
+                    clickableText(
+                        text: 'Login Instead',
+                        ontapped: () {
+                          //Implement Register Button
+                          Navigator.pushReplacementNamed(
+                              context, LoginScreen.loginscreenId);
+                        },
+                        style: kMediumTextStyle.copyWith(
+                            color: AppColors.textColorOnboarding))
+                  ],
+                )
               ],
             ),
           ),
