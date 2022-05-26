@@ -12,12 +12,18 @@ class DashboardAppBar extends StatelessWidget {
     Key? key,
     required this.displayUsername,
     required this.displayProfileIcon,
-    required this.showNotificatioBadge
+    required this.showNotificatioBadge,
+    required this.displayCountry,
+    required this.displayCity,
+    required this.displayCountryFlag,
   }) : super(key: key);
 
   final String? displayUsername;
   final String? displayProfileIcon;
   final bool? showNotificatioBadge;
+  final String? displayCountry;
+  final String? displayCity;
+  final String? displayCountryFlag;
 
   @override
   Widget build(BuildContext context) {
@@ -36,21 +42,23 @@ class DashboardAppBar extends StatelessWidget {
                   color: AppColors.textColorBlack,
                   fontFamily: kSmallAltFontFamily,
                   fontWeight: FontWeight.w800,
-                  fontSize: 22,
+                  fontSize: 18,
                   wordSpacing: 0,
                   letterSpacing: 0.2),
             ),
+            kSpace10,
             Row(
               children: [
-                const Text(
-                  '🇳🇬 ',
-                  style: TextStyle(
-                    fontSize: 20,
+                Text(
+                  '$displayCountryFlag',
+                  style: const TextStyle(
+                    fontSize: 14,
                   ),
                 ),
+                const SizedBox(width: 8),
                 Text(
-                  'Abuja, Nigeria',
-                  style: kSmallTextStyle.copyWith(fontSize: 15),
+                  '$displayCity, $displayCountry',
+                  style: kSmallTextStyle.copyWith(fontSize: 13),
                 ),
               ],
             )

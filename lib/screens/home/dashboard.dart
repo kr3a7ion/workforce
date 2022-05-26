@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:workforce/components/widgets/dashboard_appbar.dart';
 import 'package:workforce/components/widgets/dashboard_cardrow.dart';
@@ -7,12 +9,23 @@ import 'package:workforce/constants/appcolors.dart';
 import 'package:workforce/constants/constants.dart';
 
 class Dashboard extends StatefulWidget {
-  const Dashboard({Key? key}) : super(key: key);
+  Dashboard({Key? key}) : super(key: key);
 
   static const String dashboardId = '/DashboardScreen';
+
+  final Random _random = Random();
+
+  // Below finals are to be generate automaticaly
+  // It still needs refactoring
   final String displayUsername = 'Gideon';
   final String displayProfileIcon = kFemaleProfileImage;
   final bool showNotificationBadge = true;
+  final String displayCountry = 'Nigeria';
+  final String displayCity = 'Lagos';
+  final String displayCountryFlag = '🇳🇬';
+  final String displayCurrency = '\$';
+  final String displayWalletBalance = '12,808';
+  final String workHours = '1000';
 
   @override
   State<Dashboard> createState() => _DashboardState();
@@ -33,10 +46,15 @@ class _DashboardState extends State<Dashboard> {
               displayUsername: widget.displayUsername,
               displayProfileIcon: widget.displayProfileIcon,
               showNotificatioBadge: widget.showNotificationBadge,
+              displayCountry: widget.displayCountry,
+              displayCity: widget.displayCity,
+              displayCountryFlag: widget.displayCountryFlag,
             ),
             const SizedBox(height: 30),
             CardRow(
-              currency: '\$',
+              currency: widget.displayCurrency,
+              walletBalance: widget.displayWalletBalance,
+              workHours: widget.workHours,
             ),
             const SizedBox(height: 30),
             Row(
@@ -49,9 +67,10 @@ class _DashboardState extends State<Dashboard> {
                       fontWeight: FontWeight.bold,
                     )),
                 Text(
+                  // Needs Ontap Gesture 
                   'See all',
                   style: kSmallTextStyle.copyWith(
-                      color: AppColors.smallCardColor, fontSize: 16),
+                      color: AppColors.smallCardColor, fontSize: 14),
                 )
               ],
             ),

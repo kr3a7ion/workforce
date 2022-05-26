@@ -4,9 +4,12 @@ import 'package:workforce/constants/appcolors.dart';
 import 'package:workforce/constants/constants.dart';
 
 class CardRow extends StatelessWidget {
-  CardRow({Key? key, this.currency}) : super(key: key);
+  CardRow({Key? key, required this.currency, required this.walletBalance, required this.workHours})
+      : super(key: key);
 
-  final String? currency;
+  final String currency;
+  final String walletBalance;
+  final String workHours;
 
   final Widget moneyImage = Image.asset(kMoney);
 
@@ -43,15 +46,15 @@ class CardRow extends StatelessWidget {
                     const SizedBox(height: 20),
                     Row(children: [
                       Text(
-                        currency!,
+                        currency,
                         style: const TextStyle(
                             fontSize: 30,
                             color: AppColors.textOffWhite,
                             fontFamily: kSmallAltFontFamily),
                       ),
                       const SizedBox(width: 10),
-                      const Text('12,808',
-                          style: TextStyle(
+                      Text(walletBalance,
+                          style: const TextStyle(
                               fontSize: 28,
                               fontWeight: FontWeight.bold,
                               fontFamily: kTextFontFamily,
@@ -117,8 +120,8 @@ class CardRow extends StatelessWidget {
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
-                            const Text('1000+',
-                                style: TextStyle(
+                            Text("$workHours+",
+                                style: const TextStyle(
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold,
                                     fontFamily: kTextFontFamily,
