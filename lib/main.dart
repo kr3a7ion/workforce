@@ -32,7 +32,7 @@ class StartApp extends StatelessWidget {
         LoginScreen.loginscreenId :(context) => const LoginScreen(),
         RegistrationScreen.registrationScreenId :(context) => const RegistrationScreen(),
         RecoveryScreen.recoveryScreenId :(context) => const RecoveryScreen(),
-        Dashboard.dashboardId :(context) => const Dashboard(),
+        Dashboard.dashboardId :(context) => Dashboard(),
       },
 
 

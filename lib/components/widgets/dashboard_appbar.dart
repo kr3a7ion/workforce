@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 
@@ -68,6 +66,7 @@ class DashboardAppBar extends StatelessWidget {
             cardColor: AppColors.pureWhiteBackground,
             child: Badge(
               showBadge: showNotificatioBadge!,
+              elevation: 5,
               badgeColor: AppColors.textColorOnboarding,
               position: BadgePosition.topEnd(top: 9, end: 8),
               child: const Icon(Icons.notifications),

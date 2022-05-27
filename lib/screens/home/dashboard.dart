@@ -8,12 +8,15 @@ import 'package:workforce/components/widgets/project_cardlist.dart';
 import 'package:workforce/constants/appcolors.dart';
 import 'package:workforce/constants/constants.dart';
 
+import '../../constants/color_picker.dart';
+
 class Dashboard extends StatefulWidget {
   Dashboard({Key? key}) : super(key: key);
 
   static const String dashboardId = '/DashboardScreen';
 
-  final Random _random = Random();
+  final Random _random1 = Random();
+  final Random _random2 = Random();
 
   // Below finals are to be generate automaticaly
   // It still needs refactoring
@@ -67,7 +70,7 @@ class _DashboardState extends State<Dashboard> {
                       fontWeight: FontWeight.bold,
                     )),
                 Text(
-                  // Needs Ontap Gesture 
+                  // Needs Ontap Gesture
                   'See all',
                   style: kSmallTextStyle.copyWith(
                       color: AppColors.smallCardColor, fontSize: 14),
@@ -75,9 +78,11 @@ class _DashboardState extends State<Dashboard> {
               ],
             ),
             kSpace20,
-            CardTileList(),
+            CardTileList(
+                colorPicker: widget._random1.nextInt(colorPick.length + 1)),
             kSpace10,
-            CardTileList(),
+            CardTileList(
+                colorPicker: widget._random2.nextInt(colorPick.length + 1)),
           ],
         ),
       ),

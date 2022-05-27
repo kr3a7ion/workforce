@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:workforce/components/widgets_componets/custom_cardtile.dart';
 import 'package:workforce/components/widgets_componets/custom_mini_card.dart';
@@ -7,18 +5,11 @@ import 'package:workforce/components/widgets_componets/profile_icon.dart';
 import 'package:workforce/constants/appcolors.dart';
 import 'package:workforce/constants/constants.dart';
 
+import '../../constants/color_picker.dart';
+
 class CardTileList extends StatelessWidget {
-  CardTileList({Key? key}) : super(key: key);
-
-  final colorPick = <Color>[
-    Colors.limeAccent,
-    Colors.purpleAccent,
-    Colors.greenAccent,
-    const Color.fromARGB(255, 179, 255, 0),
-    const Color.fromARGB(255, 59, 255, 173)
-  ];
-
-  
+  const CardTileList({Key? key, required this.colorPicker}) : super(key: key);
+  final int colorPicker;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +22,7 @@ class CardTileList extends StatelessWidget {
                     const EdgeInsets.only(left: 13, top: 13, bottom: 13),
                 leading: MiniCardText(
                   cardDecoration: BoxDecoration(
-                      color: colorPick[_random.nextInt(colorPick.length)],
+                      color: colorPick[colorPicker],
                       borderRadius: BorderRadius.circular(100)),
                   child: Padding(
                     padding: const EdgeInsets.all(6),
