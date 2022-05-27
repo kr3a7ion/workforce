@@ -8,8 +8,19 @@ import 'package:workforce/constants/constants.dart';
 import '../../constants/color_picker.dart';
 
 class CardTileList extends StatelessWidget {
-  const CardTileList({Key? key, required this.colorPicker}) : super(key: key);
-  final int colorPicker;
+  const CardTileList({
+    Key? key,
+    required this.colorPickerJobProfile,
+    required this.jobProfileImage,
+    required this.jobCategory,
+    required this.employerCompanyName,
+    required this.jobDescription,
+  }) : super(key: key);
+  final int colorPickerJobProfile;
+  final String jobProfileImage;
+  final String jobCategory;
+  final String employerCompanyName;
+  final String jobDescription;
 
   @override
   Widget build(BuildContext context) {
@@ -22,12 +33,12 @@ class CardTileList extends StatelessWidget {
                     const EdgeInsets.only(left: 13, top: 13, bottom: 13),
                 leading: MiniCardText(
                   cardDecoration: BoxDecoration(
-                      color: colorPick[colorPicker],
+                      color: colorPick[colorPickerJobProfile],
                       borderRadius: BorderRadius.circular(100)),
                   child: Padding(
                     padding: const EdgeInsets.all(6),
                     child: Image.asset(
-                      kFemaleProfileImage,
+                      jobProfileImage,
                       fit: BoxFit.contain,
                     ),
                   ),
@@ -35,7 +46,7 @@ class CardTileList extends StatelessWidget {
                 title: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Tech Company Logo Design',
+                      Text(jobDescription,
                           style: kMediumTextStyle.copyWith(
                             fontSize: 18,
                             letterSpacing: 1,
@@ -45,7 +56,7 @@ class CardTileList extends StatelessWidget {
                       const SizedBox(height: 5),
                       Row(children: [
                         Text(
-                          'Kreattech Ltd',
+                          employerCompanyName,
                           style: kSmallTextStyle.copyWith(
                               fontSize: 14, letterSpacing: 0),
                         ),
@@ -62,7 +73,7 @@ class CardTileList extends StatelessWidget {
                                 child: FittedBox(
                                     fit: BoxFit.contain,
                                     child: Text(
-                                      'Design',
+                                      jobCategory,
                                       style: kSmallTextStyle.copyWith(
                                           fontSize: 10,
                                           color: const Color.fromARGB(

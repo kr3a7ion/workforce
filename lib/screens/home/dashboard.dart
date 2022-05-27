@@ -30,6 +30,9 @@ class Dashboard extends StatefulWidget {
   final String displayWalletBalance = '12,808';
   final String workHours = '1000';
 
+  final String jobProfileImageMale = kProfileImageMale;
+  final String jobProfileImageFemale = kFemaleProfileImage;
+
   @override
   State<Dashboard> createState() => _DashboardState();
 }
@@ -79,10 +82,12 @@ class _DashboardState extends State<Dashboard> {
             ),
             kSpace20,
             CardTileList(
-                colorPicker: widget._random1.nextInt(colorPick.length + 1)),
+                jobProfileImage: widget.jobProfileImageMale,
+                colorPickerJobProfile: widget._random1.nextInt(colorPick.length + 1)),
             kSpace10,
             CardTileList(
-                colorPicker: widget._random2.nextInt(colorPick.length + 1)),
+                jobProfileImage: widget.jobProfileImageFemale,
+                colorPickerJobProfile: widget._random2.nextInt(colorPick.length + 1)),
           ],
         ),
       ),
