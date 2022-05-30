@@ -29,7 +29,11 @@ class Dashboard extends StatefulWidget {
   final String displayCurrency = '\$';
   final String displayWalletBalance = '12,808';
   final String workHours = '1000';
+  final String jobDescription = 'kreattec web development';
+  final String jobCategory = 'web dev';
+  final String employerCompanyName = 'Kreattech Ng';
 
+  // Others
   final String jobProfileImageMale = kProfileImageMale;
   final String jobProfileImageFemale = kFemaleProfileImage;
 
@@ -83,11 +87,19 @@ class _DashboardState extends State<Dashboard> {
             kSpace20,
             CardTileList(
                 jobProfileImage: widget.jobProfileImageMale,
-                colorPickerJobProfile: widget._random1.nextInt(colorPick.length + 1)),
+                jobCategory: widget.jobCategory,
+                jobDescription: widget.jobDescription,
+                employerCompanyName: widget.employerCompanyName,
+                colorPickerJobProfile:
+                    widget._random1.nextInt(colorPick.length + 1)),
             kSpace10,
             CardTileList(
                 jobProfileImage: widget.jobProfileImageFemale,
-                colorPickerJobProfile: widget._random2.nextInt(colorPick.length + 1)),
+                jobDescription: widget.jobDescription,
+                jobCategory: widget.jobCategory,
+                employerCompanyName: widget.employerCompanyName,
+                colorPickerJobProfile:
+                    widget._random2.nextInt(colorPick.length + 1)),
           ],
         ),
       ),
