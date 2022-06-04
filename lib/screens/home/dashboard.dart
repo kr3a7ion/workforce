@@ -22,7 +22,9 @@ class Dashboard extends StatefulWidget {
   // It still needs refactoring
   final String displayUsername = 'Gideon';
   final String displayProfileIcon = kFemaleProfileImage;
+
   final bool showNotificationBadge = true;
+
   final String displayCountry = 'Nigeria';
   final String displayCity = 'Lagos';
   final String displayCountryFlag = '🇳🇬';
@@ -30,8 +32,11 @@ class Dashboard extends StatefulWidget {
   final String displayWalletBalance = '12,808';
   final String workHours = '1000';
   final String jobDescription = 'kreattec web development';
-  final String jobCategory = 'web dev';
+  final String jobCategory = 'web';
   final String employerCompanyName = 'Kreattech Ng';
+  final String jobPostDate = '1 June';
+  final String jobDateTimeFrame = '10';
+  final String nextJobTask = 'Prepering prototype';
 
   // Others
   final String jobProfileImageMale = kProfileImageMale;
@@ -76,11 +81,15 @@ class _DashboardState extends State<Dashboard> {
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                     )),
-                Text(
-                  // Needs Ontap Gesture
-                  'See all',
-                  style: kSmallTextStyle.copyWith(
-                      color: AppColors.smallCardColor, fontSize: 14),
+                GestureDetector(
+                  onTap: () {
+                    // Implement OnTap for See all Projects
+                  },
+                  child: Text(
+                    'See all',
+                    style: kSmallTextStyle.copyWith(
+                        color: AppColors.smallCardColor, fontSize: 14),
+                  ),
                 )
               ],
             ),
@@ -90,16 +99,22 @@ class _DashboardState extends State<Dashboard> {
                 jobCategory: widget.jobCategory,
                 jobDescription: widget.jobDescription,
                 employerCompanyName: widget.employerCompanyName,
+                jobDateTimeFrame: widget.jobDateTimeFrame,
+                jobPostDate: widget.jobPostDate,
+                nextJobTask: widget.nextJobTask,
                 colorPickerJobProfile:
-                    widget._random1.nextInt(colorPick.length + 1)),
+                    widget._random1.nextInt(colorPick.length)),
             kSpace10,
             CardTileList(
                 jobProfileImage: widget.jobProfileImageFemale,
                 jobDescription: widget.jobDescription,
                 jobCategory: widget.jobCategory,
                 employerCompanyName: widget.employerCompanyName,
+                jobDateTimeFrame: widget.jobDateTimeFrame,
+                jobPostDate: widget.jobPostDate,
+                nextJobTask: widget.nextJobTask,
                 colorPickerJobProfile:
-                    widget._random2.nextInt(colorPick.length + 1)),
+                    widget._random2.nextInt(colorPick.length)),
           ],
         ),
       ),

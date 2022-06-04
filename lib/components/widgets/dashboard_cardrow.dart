@@ -103,11 +103,13 @@ class CardRow extends StatelessWidget {
                         Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text('Statistic',
-                                  style: kSmallTextStyle.copyWith(
-                                      color: AppColors.backgroundColorButtom,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 16)),
+                              FittedBox(
+                                child: Text('Statistic',
+                                    style: kSmallTextStyle.copyWith(
+                                        color: AppColors.backgroundColorButtom,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 16)),
+                              ),
                               const SizedBox(
                                   height: 20,
                                   child: Icon(
@@ -118,16 +120,15 @@ class CardRow extends StatelessWidget {
                             ]),
                         const SizedBox(height: 20),
                         Row(
-                          crossAxisAlignment: CrossAxisAlignment.end,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text("$workHours+",
-                                style: const TextStyle(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold,
-                                    fontFamily: kTextFontFamily,
-                                    color: AppColors.smallCardColor)),
-                            const SizedBox(
-                              width: 10,
+                            FittedBox(
+                              child: Text("$workHours+",
+                                  style: const TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: kTextFontFamily,
+                                      color: AppColors.smallCardColor)),
                             ),
                             FittedBox(
                               fit: BoxFit.contain,

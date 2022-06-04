@@ -19,7 +19,7 @@ class ProfileIcon extends StatelessWidget {
     return Container(
       height: height,
       width: width,
-      padding: const EdgeInsets.all(5),
+      padding: const EdgeInsets.all(3),
       decoration: BoxDecoration(
           color: cardColor,
           borderRadius: const BorderRadius.all(Radius.circular(15))),
@@ -41,7 +41,7 @@ class NotificationCard extends StatelessWidget {
     return Container(
       height: 60,
       width: 60,
-      padding: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(5),
       decoration: BoxDecoration(
           color: cardColor,
           borderRadius: const BorderRadius.all(Radius.circular(15))),

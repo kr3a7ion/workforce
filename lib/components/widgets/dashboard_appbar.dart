@@ -1,4 +1,4 @@
-import 'package:badges/badges.dart';
+//import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 
 import 'package:workforce/components/widgets_componets/profile_icon.dart';
@@ -64,14 +64,35 @@ class DashboardAppBar extends StatelessWidget {
         ),
         NotificationCard(
             cardColor: AppColors.pureWhiteBackground,
-            child: Badge(
-              showBadge: showNotificatioBadge!,
-              elevation: 5,
-              badgeColor: AppColors.textColorOnboarding,
-              position: BadgePosition.topEnd(top: 9, end: 8),
-              child: const Icon(Icons.notifications),
+            child: Icon(
+              showNotificatioBadge!
+                  ? Icons.notifications_on_outlined
+                  : Icons.notifications_outlined,
+              size: 30,
+              color: showNotificatioBadge!
+                  ? AppColors.profileCardColor
+                  : AppColors.textColorGrey,
             ))
       ],
     );
   }
 }
+
+
+// ALTERNATIVE NOTIFICATION INDICATOR
+
+// Badge(
+//               showBadge: showNotificatioBadge!,
+//               elevation: 5,
+//               borderSide: const BorderSide(
+//                   color: AppColors.pureWhiteBackground,
+//                   width: 0.7,
+//                   style: BorderStyle.solid),
+//               badgeColor: AppColors.textColorOnboarding,
+//               position: BadgePosition.topEnd(top: 14, end: 13),
+//               child: Icon(
+//                 showNotificatioBadge! ? Icons.notifications_on_outlined : Icons.notifications_active_outlined,
+//                 size: 30,
+//                 color: showNotificatioBadge! ? AppColors.profileCardColor : AppColors.textColorGrey,
+//               ),
+//             )

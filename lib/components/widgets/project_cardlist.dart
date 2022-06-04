@@ -15,12 +15,18 @@ class CardTileList extends StatelessWidget {
     required this.jobCategory,
     required this.employerCompanyName,
     required this.jobDescription,
+    required this.jobDateTimeFrame,
+    required this.jobPostDate,
+    required this.nextJobTask,
   }) : super(key: key);
   final int colorPickerJobProfile;
   final String jobProfileImage;
   final String jobCategory;
   final String employerCompanyName;
   final String jobDescription;
+  final String jobDateTimeFrame;
+  final String jobPostDate;
+  final String nextJobTask;
 
   @override
   Widget build(BuildContext context) {
@@ -30,16 +36,18 @@ class CardTileList extends StatelessWidget {
           child: Column(children: [
             ListTile(
                 contentPadding:
-                    const EdgeInsets.only(left: 13, top: 13, bottom: 13),
+                    const EdgeInsets.only(left: 13, top: 13, bottom: 7),
                 leading: MiniCardText(
                   cardDecoration: BoxDecoration(
                       color: colorPick[colorPickerJobProfile],
                       borderRadius: BorderRadius.circular(100)),
                   child: Padding(
-                    padding: const EdgeInsets.all(6),
-                    child: Image.asset(
-                      jobProfileImage,
-                      fit: BoxFit.contain,
+                    padding: const EdgeInsets.all(3),
+                    child: Center(
+                      child: Image.asset(
+                        jobProfileImage,
+                        fit: BoxFit.contain,
+                      ),
                     ),
                   ),
                 ),
@@ -75,7 +83,7 @@ class CardTileList extends StatelessWidget {
                                     child: Text(
                                       jobCategory,
                                       style: kSmallTextStyle.copyWith(
-                                          fontSize: 10,
+                                          fontSize: 14,
                                           color: const Color.fromARGB(
                                               255, 0, 140, 255)),
                                     ))))
@@ -85,12 +93,11 @@ class CardTileList extends StatelessWidget {
               height: 3,
               color: AppColors.textColorGrey,
               thickness: 0.5,
-              endIndent: 20,
-              indent: 20,
+              indent: 13,
             ),
             ListTile(
               contentPadding:
-                  const EdgeInsets.only(bottom: 10, left: 13, top: 5),
+                  const EdgeInsets.only(left: 13, top: 7, bottom: 13),
               leading: ProfileIcon(
                 height: 45,
                 width: 45,
@@ -98,20 +105,24 @@ class CardTileList extends StatelessWidget {
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
-                    children: const [
-                      Text(
-                        '18',
-                        style: TextStyle(
-                            color: AppColors.textColor,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600),
+                    children: [
+                      FittedBox(
+                        child: Text(
+                          jobDateTimeFrame,
+                          style: const TextStyle(
+                              color: AppColors.textColor,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w600),
+                        ),
                       ),
-                      Text(
-                        'days',
-                        style: TextStyle(
-                            fontSize: 13,
-                            color: AppColors.textColor,
-                            fontWeight: FontWeight.w400),
+                      const FittedBox(
+                        child: Text(
+                          'days',
+                          style: TextStyle(
+                              fontSize: 11,
+                              color: AppColors.textColor,
+                              fontWeight: FontWeight.w400),
+                        ),
                       )
                     ]),
               ),
@@ -129,21 +140,21 @@ class CardTileList extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         const Text(
-                          '\u2022',
+                          '\u2022 ',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               fontFamily: kLargefontFamily1,
                               fontSize: 20,
                               color: Colors.greenAccent),
                         ),
-                        Text(' Prepering live prototype',
+                        Text(nextJobTask,
                             style: kMediumTextStyle.copyWith(
                                 fontSize: 16,
                                 letterSpacing: 1,
                                 color: AppColors.backgroundColorButtom,
                                 fontWeight: FontWeight.w500)),
                         const Spacer(),
-                        Text('9 May',
+                        Text(jobPostDate,
                             style: kMediumTextStyle.copyWith(
                                 fontSize: 16,
                                 letterSpacing: 1,

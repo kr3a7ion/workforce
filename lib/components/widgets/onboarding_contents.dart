@@ -50,7 +50,7 @@ class OnboardingContents extends StatelessWidget {
         Column(
           children: [
             Container(
-              padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
+              padding: const EdgeInsets.all(15),
               margin: const EdgeInsets.only(left: 40, right: 40),
               height: 180,
               decoration: BoxDecoration(
@@ -58,6 +58,7 @@ class OnboardingContents extends StatelessWidget {
                 borderRadius: const BorderRadius.all(Radius.circular(35)),
               ),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   FittedBox(
                     child: Text(
@@ -81,18 +82,16 @@ class OnboardingContents extends StatelessWidget {
                           fontFamily: 'Fredoka'),
                     ),
                   ),
-                  const Padding(
-                    padding: EdgeInsets.only(top: 8),
-                    child: Text(
-                      'Here we encourage every skill and "Guess what" you get paid for doing what you love. ',
-                      textAlign: TextAlign.center,
-                      softWrap: true,
-                      style: TextStyle(
-                          color: AppColors.smalltextColor,
-                          fontSize: 20,
-                          letterSpacing: 1.5,
-                          fontFamily: 'Yanone'),
-                    ),
+                  const Text(
+                    'Here we encourage every skill and "Guess what" you get paid for doing what you love. ',
+                    textAlign: TextAlign.center,
+                    softWrap: true,
+                    maxLines: 3,
+                    style: TextStyle(
+                        color: AppColors.smalltextColor,
+                        fontSize: 18,
+                        letterSpacing: 1.5,
+                        fontFamily: 'Yanone'),
                   ),
                 ],
               ),
