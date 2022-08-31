@@ -28,6 +28,11 @@ class CardTileList extends StatelessWidget {
   final String jobPostDate;
   final String nextJobTask;
 
+  final double jobDescriptionFontSize = 15;
+  final double jobDescriptionletterSpace = 1.5;
+  final double employerCompanyNameFontSize = 12;
+  final double employerCompanyNameletterSpace = 1.5;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -56,22 +61,23 @@ class CardTileList extends StatelessWidget {
                     children: [
                       Text(jobDescription,
                           style: kMediumTextStyle.copyWith(
-                            fontSize: 18,
-                            letterSpacing: 1,
+                            fontSize: jobDescriptionFontSize,
+                            letterSpacing: jobDescriptionletterSpace,
                             color: AppColors.backgroundColorButtom,
-                            fontWeight: FontWeight.bold,
+                            fontWeight: FontWeight.w600,
                           )),
                       const SizedBox(height: 5),
                       Row(children: [
                         Text(
                           employerCompanyName,
                           style: kSmallTextStyle.copyWith(
-                              fontSize: 14, letterSpacing: 0),
+                              fontSize: employerCompanyNameFontSize,
+                              letterSpacing: employerCompanyNameletterSpace),
                         ),
                         const SizedBox(width: 10),
                         MiniCardText(
-                            height: 20,
-                            width: 54,
+                            height: 18,
+                            width: 48,
                             cardDecoration: const BoxDecoration(
                               borderRadius:
                                   BorderRadius.all(Radius.circular(5)),
@@ -83,7 +89,7 @@ class CardTileList extends StatelessWidget {
                                     child: Text(
                                       jobCategory,
                                       style: kSmallTextStyle.copyWith(
-                                          fontSize: 14,
+                                          fontSize: 12,
                                           color: const Color.fromARGB(
                                               255, 0, 140, 255)),
                                     ))))
@@ -111,7 +117,7 @@ class CardTileList extends StatelessWidget {
                           jobDateTimeFrame,
                           style: const TextStyle(
                               color: AppColors.textColor,
-                              fontSize: 14,
+                              fontSize: 13,
                               fontWeight: FontWeight.w600),
                         ),
                       ),
@@ -119,9 +125,10 @@ class CardTileList extends StatelessWidget {
                         child: Text(
                           'days',
                           style: TextStyle(
-                              fontSize: 11,
+                              fontSize: 10,
                               color: AppColors.textColor,
-                              fontWeight: FontWeight.w400),
+                              letterSpacing: 0.8,
+                              fontWeight: FontWeight.w500),
                         ),
                       )
                     ]),
@@ -144,19 +151,19 @@ class CardTileList extends StatelessWidget {
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               fontFamily: kLargefontFamily1,
-                              fontSize: 20,
+                              fontSize: 16,
                               color: Colors.greenAccent),
                         ),
                         Text(nextJobTask,
                             style: kMediumTextStyle.copyWith(
-                                fontSize: 16,
+                                fontSize: jobDescriptionFontSize,
                                 letterSpacing: 1,
                                 color: AppColors.backgroundColorButtom,
                                 fontWeight: FontWeight.w500)),
                         const Spacer(),
                         Text(jobPostDate,
                             style: kMediumTextStyle.copyWith(
-                                fontSize: 16,
+                                fontSize: jobDescriptionFontSize,
                                 letterSpacing: 1,
                                 color: AppColors.backgroundColorButtom,
                                 fontWeight: FontWeight.w500))

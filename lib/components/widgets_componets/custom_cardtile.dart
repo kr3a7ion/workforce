@@ -13,7 +13,6 @@ class CustomCardTile extends StatelessWidget {
         Expanded(
           child: Container(
             padding: const EdgeInsets.only(right: 13),
-            child: child,
           decoration:const BoxDecoration(
             color: AppColors.pureWhiteBackground,
             borderRadius: BorderRadius.all(Radius.circular(25)),
@@ -24,6 +23,7 @@ class CustomCardTile extends StatelessWidget {
               )
             ],
           ),
+            child: child,
         ),
         )],
     );

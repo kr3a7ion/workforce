@@ -63,22 +63,20 @@ class OnboardingContents extends StatelessWidget {
                   FittedBox(
                     child: Text(
                       'Discover your full',
-                      textAlign: TextAlign.center,
                       maxLines: 1,
                       overflow: TextOverflow.visible,
                       style: Theme.of(context).textTheme.displayLarge!.copyWith(
                             fontFamily: kLargefontFamily1,
-                            fontSize: 30,
+                            fontSize: 28,
                           ),
                     ),
                   ),
                   const FittedBox(
                     child: Text(
                       'Potentials Here',
-                      textAlign: TextAlign.center,
                       style: TextStyle(
                           color: AppColors.textColorOnboarding,
-                          fontSize: 30,
+                          fontSize: 24,
                           fontFamily: 'Fredoka'),
                     ),
                   ),

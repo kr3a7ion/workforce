@@ -67,21 +67,6 @@ class CardRow extends StatelessWidget {
                   left: 12,
                   child: SizedBox(height: 170, child: Image.asset(kWallet)),
                 ),
-                Positioned(
-                  bottom: 75,
-                  left: 120,
-                  child: SizedBox(height: 55, child: moneyImage),
-                ),
-                Positioned(
-                  bottom: 100,
-                  left: 80,
-                  child: SizedBox(height: 40, child: moneyImage),
-                ),
-                Positioned(
-                  bottom: 120,
-                  left: 120,
-                  child: SizedBox(height: 40, child: moneyImage),
-                ),
               ],
             )),
         const SizedBox(width: 12),

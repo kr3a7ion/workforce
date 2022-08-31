@@ -22,12 +22,12 @@ class LargeButton extends StatelessWidget {
                 elevation: 20,
                 shadowColor: AppColors.backgroundColor,
                 color: AppColors.textColor,
+                borderRadius: const BorderRadius.all(Radius.circular(15)),
                 child: Center(
                     child: Text(
                   label!,
                   style: kMediumTextStyle.copyWith(color: Colors.white),
                 )),
-                borderRadius: const BorderRadius.all(Radius.circular(15)),
               ),
             ),
           ),

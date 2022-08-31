@@ -2,13 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:workforce/constants/appcolors.dart';
 import 'package:workforce/constants/constants.dart';
 
-class CustomDivider extends StatelessWidget {
-  const CustomDivider({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
+Row customDivider (){
     return Row(
       children: [
         Expanded(
@@ -30,5 +24,4 @@ class CustomDivider extends StatelessWidget {
         ),
       ],
     );
-  }
-}
+  } 

@@ -15,8 +15,8 @@ class CustomCard extends StatelessWidget {
       flex: flexV!,
       child: Container(
         height: height,
-        child: child,
         decoration: decorations,
+        child: child,
       ),
     );
   }

@@ -1,5 +1,6 @@
 //import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
+import 'package:iconly/iconly.dart';
 
 import 'package:workforce/components/widgets_componets/profile_icon.dart';
 import 'package:workforce/constants/appcolors.dart';
@@ -66,8 +67,8 @@ class DashboardAppBar extends StatelessWidget {
             cardColor: AppColors.pureWhiteBackground,
             child: Icon(
               showNotificatioBadge!
-                  ? Icons.notifications_on_outlined
-                  : Icons.notifications_outlined,
+                  ? IconlyBroken.notification
+                  : IconlyBroken.notification,
               size: 30,
               color: showNotificatioBadge!
                   ? AppColors.profileCardColor

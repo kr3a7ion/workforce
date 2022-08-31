@@ -65,10 +65,10 @@ const kSmallTextStyle = TextStyle(
 
 const kButtonTextStyle = TextStyle(
     color: AppColors.textColor,
-    fontSize: 24,
+    fontSize: 18,
     letterSpacing: 1.5,
-    fontWeight: FontWeight.bold,
-    fontFamily: kSmallfontFamily);
+    //fontWeight: FontWeight.w100,
+    fontFamily: kLargefontFamily1);
 
 const kBorderRadius = BorderRadius.all(Radius.circular(10));
 

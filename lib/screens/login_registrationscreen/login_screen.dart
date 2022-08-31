@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:workforce/components/widgets_componets/custom_textfield.dart';
 import 'package:workforce/constants/appcolors.dart';
 import 'package:workforce/constants/constants.dart';
-import 'package:workforce/screens/home/dashboard.dart';
+import 'package:workforce/screens/home/navigator.dart';
 import 'package:workforce/screens/login_registrationscreen/password_recovery_screen.dart';
 import 'package:workforce/screens/login_registrationscreen/registration_screen.dart';
 
@@ -118,10 +118,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 // Set Login Button ontapped
                 ontapped: () {
                   Navigator.pushReplacementNamed(
-                      context, Dashboard.dashboardId);
+                      context, NavigateScreens.navigateScreensId);
                 },
               ),
-              const CustomDivider(),
+              customDivider(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
