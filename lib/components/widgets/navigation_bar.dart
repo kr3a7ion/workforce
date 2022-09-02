@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 
 import 'package:workforce/constants/appcolors.dart';
+import 'package:workforce/constants/constants.dart';
 import 'package:workforce/screens/home/dashboard.dart';
 import 'package:workforce/screens/profile/profilescreen.dart';
 import 'package:workforce/screens/search/search_screen.dart';
@@ -19,7 +20,7 @@ class CustomNavigationBar extends StatelessWidget {
   final ValueChanged<int> onItemSelected;
 
   final Color activeIconColor = const Color.fromARGB(255, 35, 123, 206);
-  final Color inactiveIconColor = AppColors.pureWhiteBackground;
+  final Color inactiveIconColor = AppColors.backgroundColorlight;
 
   final List<IconData> navigationIcons = [
     IconlyBroken.home,
@@ -42,9 +43,9 @@ class CustomNavigationBar extends StatelessWidget {
           child: Padding(
               padding: const EdgeInsets.only(left: 15, right: 15, bottom: 20),
               child: Container(
-                  height: 80,
+                  height: 90,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(23),
+                    borderRadius: BorderRadius.circular(20),
                     color: const Color.fromARGB(255, 24, 24, 24),
                   ),
                   child: Row(
@@ -54,16 +55,19 @@ class CustomNavigationBar extends StatelessWidget {
                         index: navigationIcons.indexOf(IconlyBroken.home),
                         iconIndex: namedRoutes.indexOf(Dashboard.dashboardId),
                       ),
+                      kSpace10,
                       customIcon(
                         index: navigationIcons.indexOf(IconlyBroken.search),
                         iconIndex:
                             namedRoutes.indexOf(SearchScreen.searchScreenId),
                       ),
+                      kSpace10,
                       customIcon(
                         index: navigationIcons.indexOf(IconlyBroken.profile),
                         iconIndex:
                             namedRoutes.indexOf(ProfileScreen.profileScreenId),
                       ),
+                      kSpace10,
                       customIcon(
                         index: navigationIcons.indexOf(IconlyBroken.setting),
                         iconIndex:
@@ -79,7 +83,7 @@ class CustomNavigationBar extends StatelessWidget {
   GestureDetector customIcon({
     required int index,
     required int iconIndex,
-    double size = 35,
+    double size = 30,
   }) {
     return GestureDetector(
       onTap: (() {

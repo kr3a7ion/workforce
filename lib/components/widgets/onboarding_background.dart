@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:workforce/constants/appcolors.dart';
 
+import '../../main.dart';
 import '../widgets_componets/background_circle_gradient.dart';
 
 class Onboardingbackground extends StatelessWidget {
@@ -12,6 +13,7 @@ class Onboardingbackground extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    notificationbarHide();
     return Scaffold(
       backgroundColor: AppColors.backgroundColor,
       body: Stack(alignment: Alignment.center, children: const[

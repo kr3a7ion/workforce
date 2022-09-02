@@ -3,17 +3,23 @@ import 'package:workforce/constants/appcolors.dart';
 import 'package:workforce/main.dart';
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField({
-    Key? key,
-    this.textFieldType,
-    this.callback,
-    this.suffixChild = const Text(''),
-    this.obscuring,
-  }) : super(key: key);
+  const CustomTextField(
+      {Key? key,
+      required this.textFieldType,
+      this.callback,
+      this.suffixChild = const Text(''),
+      this.obscuring,
+      this.label = 'Text here',
+      this.prefixIcons,
+      this.icontype})
+      : super(key: key);
   final TextInputType? textFieldType;
   final Function()? callback;
   final Widget? suffixChild;
   final bool? obscuring;
+  final String label;
+  final IconData? icontype;
+  final Widget? prefixIcons;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +32,7 @@ class CustomTextField extends StatelessWidget {
         suffixIconColor: Colors.white,
         suffixchild: suffixChild,
       );
-    } else {
+    } else if (textFieldType == TextInputType.visiblePassword) {
       return sizedFormField(
         textFieldType: textFieldType!,
         label: 'Password',
@@ -35,50 +41,70 @@ class CustomTextField extends StatelessWidget {
         suffixchild: suffixChild,
         suffixIconColor: AppColors.textColor,
       );
+    } else {
+      return sizedFormField(
+        textFieldType: textFieldType!,
+        label: label,
+        visibleTap: callback,
+        obscure: false,
+        suffixIconColor: Colors.white,
+        suffixchild: suffixChild,
+        icon: icontype,
+        prefixIcon: prefixIcons,
+      );
     }
   }
 }
 
-Material sizedFormField(
+sizedFormField(
     {required TextInputType textFieldType,
     required String label,
     required void Function()? visibleTap,
+    IconData? icon,
+    Widget? prefixIcon,
     bool? obscure,
     Color? suffixIconColor,
     Widget? suffixchild = const Text('')}) {
-  return Material(
-    color: Colors.transparent,
-    elevation: 10,
-    borderRadius: BorderRadius.circular(25),
-    child: SizedBox(
-      height: 60,
-      width: double.infinity,
-      child: TextFormField(
-        onFieldSubmitted: ((value) {
-          notificationbarHide();
-        }),
-        keyboardType: textFieldType,
-        obscureText: obscure!,
-        decoration: InputDecoration(
-          filled: true,
-          fillColor: const Color.fromARGB(230, 255, 255, 255),
-          focusColor: Colors.black,
-          label: Text(label),
-          labelStyle: const TextStyle(color: AppColors.textColor),
-          suffixIcon: GestureDetector(
-            onTap: visibleTap,
-            child: suffixchild,
+  return SizedBox(
+    height: 60,
+    width: double.infinity,
+    child: Material(
+      color: Colors.transparent,
+      elevation: 10,
+      borderRadius: BorderRadius.circular(25),
+      child: Row(
+        children: [
+          Expanded(
+            child: TextFormField(
+              onFieldSubmitted: ((value) {
+                notificationbarHide();
+              }),
+              keyboardType: textFieldType,
+              obscureText: obscure!,
+              decoration: InputDecoration(
+                filled: true,
+                fillColor: const Color.fromARGB(230, 255, 255, 255),
+                focusColor: Colors.black,
+                prefixIcon: prefixIcon,
+                label: Text(label),
+                labelStyle: const TextStyle(color: AppColors.textColor),
+                suffixIcon: GestureDetector(
+                  onTap: visibleTap,
+                  child: suffixchild,
+                ),
+                suffixIconColor: suffixIconColor,
+                enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(25),
+                    borderSide: const BorderSide(
+                        width: 2, color: Color.fromARGB(255, 231, 231, 231))),
+                focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(25),
+                    borderSide: const BorderSide(
+                        width: 2, color: Color.fromARGB(255, 231, 231, 231))),
+              ),
+            ),
           ),
-          suffixIconColor: suffixIconColor,
-          enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(25),
-              borderSide: const BorderSide(
-                  width: 2, color: Color.fromARGB(255, 231, 231, 231))),
-          focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(25),
-              borderSide: const BorderSide(
-                  width: 2, color: Color.fromARGB(255, 231, 231, 231))),
-        ),
+        ],
       ),
     ),
   );

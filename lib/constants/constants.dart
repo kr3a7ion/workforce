@@ -67,7 +67,6 @@ const kButtonTextStyle = TextStyle(
     color: AppColors.textColor,
     fontSize: 18,
     letterSpacing: 1.5,
-    //fontWeight: FontWeight.w100,
     fontFamily: kLargefontFamily1);
 
 const kBorderRadius = BorderRadius.all(Radius.circular(10));
