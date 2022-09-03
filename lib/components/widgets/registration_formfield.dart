@@ -3,7 +3,7 @@ import 'package:workforce/components/widgets/phone_countryformfield.dart';
 import 'package:workforce/constants/constants.dart';
 
 import '../widgets_componets/custom_textfield.dart';
-import '../widgets_componets/signin_button.dart';
+import '../widgets_componets/custom_button.dart';
 
 class RegistrationFormField extends StatelessWidget {
   const RegistrationFormField({Key? key}) : super(key: key);
@@ -49,7 +49,8 @@ class RegistrationFormField extends StatelessWidget {
           initailCountry: initailCountry,
         ),
         kSpace20,
-        const LargeButton(
+        LargeButton(
+          ontapped: () {},
           label: 'Sign Up',
         )
       ],

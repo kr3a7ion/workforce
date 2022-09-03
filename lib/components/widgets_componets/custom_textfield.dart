@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:workforce/constants/appcolors.dart';
+import 'package:workforce/constants/constants.dart';
 import 'package:workforce/main.dart';
 
 class CustomTextField extends StatelessWidget {
@@ -70,8 +71,8 @@ sizedFormField(
     width: double.infinity,
     child: Material(
       color: Colors.transparent,
-      elevation: 10,
-      borderRadius: BorderRadius.circular(25),
+      elevation: kElevation,
+      borderRadius: kCircularRadius,
       child: Row(
         children: [
           Expanded(

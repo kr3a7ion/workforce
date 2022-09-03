@@ -41,39 +41,41 @@ class CustomNavigationBar extends StatelessWidget {
       children: [
         Expanded(
           child: Padding(
-              padding: const EdgeInsets.only(left: 15, right: 15, bottom: 20),
+              padding: const EdgeInsets.only(left: 15, right: 15, bottom: 30),
               child: Container(
                   height: 90,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     color: const Color.fromARGB(255, 24, 24, 24),
                   ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      customIcon(
-                        index: navigationIcons.indexOf(IconlyBroken.home),
-                        iconIndex: namedRoutes.indexOf(Dashboard.dashboardId),
-                      ),
-                      kSpace10,
-                      customIcon(
-                        index: navigationIcons.indexOf(IconlyBroken.search),
-                        iconIndex:
-                            namedRoutes.indexOf(SearchScreen.searchScreenId),
-                      ),
-                      kSpace10,
-                      customIcon(
-                        index: navigationIcons.indexOf(IconlyBroken.profile),
-                        iconIndex:
-                            namedRoutes.indexOf(ProfileScreen.profileScreenId),
-                      ),
-                      kSpace10,
-                      customIcon(
-                        index: navigationIcons.indexOf(IconlyBroken.setting),
-                        iconIndex:
-                            namedRoutes.indexOf(SettingScreen.settingScreenId),
-                      ),
-                    ],
+                  child: Center(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        customIcon(
+                          index: navigationIcons.indexOf(IconlyBroken.home),
+                          iconIndex: namedRoutes.indexOf(Dashboard.dashboardId),
+                        ),
+                        kSpace10,
+                        customIcon(
+                          index: navigationIcons.indexOf(IconlyBroken.search),
+                          iconIndex:
+                              namedRoutes.indexOf(SearchScreen.searchScreenId),
+                        ),
+                        kSpace10,
+                        customIcon(
+                          index: navigationIcons.indexOf(IconlyBroken.profile),
+                          iconIndex: namedRoutes
+                              .indexOf(ProfileScreen.profileScreenId),
+                        ),
+                        kSpace10,
+                        customIcon(
+                          index: navigationIcons.indexOf(IconlyBroken.setting),
+                          iconIndex: namedRoutes
+                              .indexOf(SettingScreen.settingScreenId),
+                        ),
+                      ],
+                    ),
                   ))),
         ),
       ],
@@ -89,10 +91,30 @@ class CustomNavigationBar extends StatelessWidget {
       onTap: (() {
         onItemSelected(index);
       }),
-      child: Icon(
-        navigationIcons[iconIndex],
-        size: size,
-        color: selectedIndex == index ? activeIconColor : inactiveIconColor,
+      child: SizedBox(
+        height: 40,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Icon(
+              navigationIcons[iconIndex],
+              size: size,
+              color:
+                  selectedIndex == index ? activeIconColor : inactiveIconColor,
+            ),
+            Container(
+              height: 1.5,
+              width: 10,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5),
+                color: selectedIndex == index
+                    ? activeIconColor
+                    : Colors.transparent,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

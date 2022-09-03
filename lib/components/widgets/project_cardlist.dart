@@ -40,12 +40,12 @@ class CardTileList extends StatelessWidget {
         CustomCardTile(
           child: Column(children: [
             ListTile(
-                contentPadding:
-                    const EdgeInsets.only(left: 13, top: 13, bottom: 7),
+              contentPadding: const EdgeInsets.all(0),
                 leading: MiniCardText(
                   cardDecoration: BoxDecoration(
                       color: colorPick[colorPickerJobProfile],
-                      borderRadius: BorderRadius.circular(100)),
+                      shape: BoxShape.circle,
+                      ),
                   child: Padding(
                     padding: const EdgeInsets.all(3),
                     child: Center(
@@ -99,11 +99,9 @@ class CardTileList extends StatelessWidget {
               height: 3,
               color: AppColors.textColorGrey,
               thickness: 0.5,
-              indent: 13,
             ),
             ListTile(
-              contentPadding:
-                  const EdgeInsets.only(left: 13, top: 7, bottom: 13),
+              contentPadding: const EdgeInsets.all(0),
               leading: ProfileIcon(
                 height: 45,
                 width: 45,

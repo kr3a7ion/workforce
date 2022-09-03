@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:workforce/components/widgets_componets/custom_textfield.dart';
-import 'package:workforce/components/widgets_componets/signin_button.dart';
+import 'package:workforce/components/widgets_componets/custom_button.dart';
 import 'package:workforce/constants/appcolors.dart';
 import 'package:workforce/constants/constants.dart';
 
@@ -59,7 +59,8 @@ class RecoveryScreen extends StatelessWidget {
                         //implement recovery password callback
                       },
                     ),
-                    const LargeButton(
+                    LargeButton(
+                      ontapped: () {},
                       label: 'Recover Password',
                     )
                   ],

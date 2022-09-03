@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:iconly/iconly.dart';
+import 'package:workforce/components/widgets/dashboard_appbar.dart';
+import 'package:workforce/components/widgets/search_screen_custom_card.dart';
 import 'package:workforce/components/widgets_componets/custom_textfield.dart';
 import 'package:workforce/constants/appcolors.dart';
 import 'package:workforce/constants/constants.dart';
+import 'package:workforce/constants/dashboard_const.dart';
+
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({Key? key}) : super(key: key);
@@ -10,35 +15,80 @@ class SearchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        extendBody: true,
+        extendBodyBehindAppBar: true,
         body: SingleChildScrollView(
-      clipBehavior: Clip.none,
-      padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          const Text(
-            'Available Jobs',
-            style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                fontFamily: kTextFontFamily),
-          ),
-          Row(
-            children: const [
-              Expanded(
-                child: SizedBox(
-                  height: 40,
-                  child: CustomTextField(
-                    icontype: Icons.search_rounded,
-                    textFieldType: TextInputType.text,
-                    prefixIcons: Icon(Icons.search_rounded, size: 30, color: AppColors.textColor,),
+          clipBehavior: Clip.none,
+          keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+          padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const DashboardAppBar(
+                  displayUsername: displayUsername,
+                  displayProfileIcon: displayProfileIcon,
+                  showNotificatioBadge: showNotificationBadge,
+                  displayCountry: displayCountry,
+                  displayCity: displayCity,
+                  displayCountryFlag: displayCountryFlag),
+              kSpace20,
+              const Text(
+                'Available Jobs',
+                style: TextStyle(
+                    color: AppColors.backgroundColorButtom,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w900,
+                    fontFamily: kTextFontFamily),
+              ),
+              kSpace20,
+              Row(
+                children: [
+                  const Expanded(
+                      child: SizedBox(
+                    height: 45,
+                    child: CustomTextField(
+                      label: 'Search Jobs',
+                      icontype: Icons.search_rounded,
+                      textFieldType: TextInputType.text,
+                      prefixIcons: Icon(
+                        IconlyBroken.search,
+                        size: 25,
+                        color: AppColors.profileCardColor,
+                      ),
+                    ),
+                  )),
+                  const SizedBox(
+                    width: 30,
                   ),
-                ),
-              )
+                  Material(
+                    elevation: kElevation,
+                    borderRadius: kCircularRadius,
+                    child: Container(
+                      height: 45,
+                      padding: const EdgeInsets.all(10),
+                      decoration: const BoxDecoration(
+                        color: Colors.white,
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                          BoxShadow(color: Colors.transparent, blurRadius: 7)
+                        ],
+                      ),
+                      child: const Icon(
+                        IconlyBroken.filter_2,
+                        color: AppColors.profileCardColor,
+                      ),
+                    ),
+                  )
+                ],
+              ),
+              kSpace40,
+              const SearchScreenCustomCard(),
+              kSpace20,
+              const SearchScreenCustomCard(),
             ],
-          )
-        ],
-      ),
-    ));
+          ),
+        ));
   }
 }
+

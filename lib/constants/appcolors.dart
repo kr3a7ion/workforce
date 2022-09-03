@@ -41,12 +41,14 @@ class AppColors {
   static const textOffWhite = Color.fromARGB(255, 243, 243, 243);
   static const textOffWhiteDark = Color.fromARGB(255, 238, 238, 238);
   static const textColorGrey = Colors.grey;
+  static const textColorGreylight = Color.fromARGB(255, 209, 209, 209);
   static const textColorBlack = Colors.black;
   static const textColorLightBlack = Color.fromRGBO(0, 0, 0, 0.541);
 
   static const textColorOnboarding = Color(0xffc67b22);
 
   static const profileCardColor = Color(0xffFABE30);
+  static const appblue = Colors.blue;
 
   static const lineBorderColor = Color.fromARGB(50, 168, 227, 255);
 

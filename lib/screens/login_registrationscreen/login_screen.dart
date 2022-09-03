@@ -9,7 +9,7 @@ import 'package:workforce/screens/login_registrationscreen/registration_screen.d
 import '../../components/widgets_componets/clickable_text.dart';
 import '../../components/widgets_componets/custom_divider.dart';
 import '../../components/widgets_componets/login_options.dart';
-import '../../components/widgets_componets/signin_button.dart';
+import '../../components/widgets_componets/custom_button.dart';
 
 class LoginScreen extends StatefulWidget {
   static const String loginscreenId = '/LoginScreen';

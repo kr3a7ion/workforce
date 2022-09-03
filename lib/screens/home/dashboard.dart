@@ -6,6 +6,7 @@ import 'package:workforce/components/widgets/dashboard_cardrow.dart';
 import 'package:workforce/components/widgets/project_cardlist.dart';
 import 'package:workforce/constants/appcolors.dart';
 import 'package:workforce/constants/constants.dart';
+import 'package:workforce/constants/dashboard_const.dart';
 
 import '../../constants/color_picker.dart';
 
@@ -13,26 +14,6 @@ class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
 
   static const String dashboardId = '/DashboardScreen';
-
-  // Below finals are to be generate automaticaly
-  // It still needs refactoring
-  final String displayUsername = 'Gideon';
-  final String displayProfileIcon = kFemaleProfileImage;
-
-  final bool showNotificationBadge = true;
-
-  final String displayCountry = 'Nigeria';
-  final String displayCity = 'Lagos';
-  final String displayCountryFlag = '🇳🇬';
-  final String displayCurrency = '\$';
-  final String displayWalletBalance = '12,808';
-  final String workHours = '1000';
-  final String jobDescription = 'Kreattec Web Development';
-  final String jobCategory = 'web';
-  final String employerCompanyName = 'Kreattech Ng';
-  final String jobPostDate = '1 June';
-  final String jobDateTimeFrame = '10';
-  final String nextJobTask = 'Prepering prototype';
 
   // Others
   final String jobProfileImageMale = kProfileImageMale;
@@ -50,6 +31,7 @@ class _DashboardState extends State<Dashboard> {
   Widget build(BuildContext context) {
     return Scaffold(
         extendBody: true,
+        extendBodyBehindAppBar: true,
         backgroundColor: AppColors.whiteBackground,
         body: SingleChildScrollView(
           clipBehavior: Clip.none,
@@ -57,19 +39,19 @@ class _DashboardState extends State<Dashboard> {
               const EdgeInsets.only(left: 15, right: 15, top: 20, bottom: 20),
           child: Column(
             children: [
-              DashboardAppBar(
-                displayUsername: widget.displayUsername,
-                displayProfileIcon: widget.displayProfileIcon,
-                showNotificatioBadge: widget.showNotificationBadge,
-                displayCountry: widget.displayCountry,
-                displayCity: widget.displayCity,
-                displayCountryFlag: widget.displayCountryFlag,
+              const DashboardAppBar(
+                displayUsername: displayUsername,
+                displayProfileIcon: displayProfileIcon,
+                showNotificatioBadge: showNotificationBadge,
+                displayCountry: displayCountry,
+                displayCity: displayCity,
+                displayCountryFlag: displayCountryFlag,
               ),
               const SizedBox(height: 30),
               CardRow(
-                currency: widget.displayCurrency,
-                walletBalance: widget.displayWalletBalance,
-                workHours: widget.workHours,
+                currency: displayCurrency,
+                walletBalance: displayWalletBalance,
+                workHours: workHours,
               ),
               const SizedBox(height: 30),
               Row(
@@ -77,7 +59,7 @@ class _DashboardState extends State<Dashboard> {
                 children: [
                   Text('Projects',
                       style: kSmallTextStyle.copyWith(
-                        color: AppColors.backgroundColorButtom,
+                        color: AppColors.profileCardColor,
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                       )),
@@ -86,9 +68,10 @@ class _DashboardState extends State<Dashboard> {
                       // Implement OnTap for See all Projects
                     },
                     child: Text(
+                      
                       'See all',
                       style: kSmallTextStyle.copyWith(
-                          color: AppColors.smallCardColor, fontSize: 14),
+                          color: AppColors.profileCardColor, fontSize: 14),
                     ),
                   )
                 ],
@@ -96,22 +79,22 @@ class _DashboardState extends State<Dashboard> {
               kSpace20,
               CardTileList(
                   jobProfileImage: widget.jobProfileImageMale,
-                  jobCategory: widget.jobCategory,
-                  jobDescription: widget.jobDescription,
-                  employerCompanyName: widget.employerCompanyName,
-                  jobDateTimeFrame: widget.jobDateTimeFrame,
-                  jobPostDate: widget.jobPostDate,
-                  nextJobTask: widget.nextJobTask,
+                  jobCategory: jobCategory,
+                  jobDescription: jobDescription,
+                  employerCompanyName: employerCompanyName,
+                  jobDateTimeFrame: jobDateTimeFrame,
+                  jobPostDate: jobPostDate,
+                  nextJobTask: nextJobTask,
                   colorPickerJobProfile: _random1.nextInt(colorPick.length)),
               kSpace10,
               CardTileList(
                   jobProfileImage: widget.jobProfileImageFemale,
-                  jobDescription: widget.jobDescription,
-                  jobCategory: widget.jobCategory,
-                  employerCompanyName: widget.employerCompanyName,
-                  jobDateTimeFrame: widget.jobDateTimeFrame,
-                  jobPostDate: widget.jobPostDate,
-                  nextJobTask: widget.nextJobTask,
+                  jobDescription: jobDescription,
+                  jobCategory: jobCategory,
+                  employerCompanyName: employerCompanyName,
+                  jobDateTimeFrame: jobDateTimeFrame,
+                  jobPostDate: jobPostDate,
+                  nextJobTask: nextJobTask,
                   colorPickerJobProfile: _random2.nextInt(colorPick.length)),
             ],
           ),

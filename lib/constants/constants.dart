@@ -90,3 +90,25 @@ const kSpace20 = SizedBox(
 const kSpace10 = SizedBox(
   height: 10,
 );
+
+const kSpace30 = SizedBox(
+  height: 30,
+);
+
+const kSpace40 = SizedBox(
+  height: 40,
+);
+
+const kSpaceW10 = SizedBox(
+  width: 10,
+);
+
+const kSpaceW20 = SizedBox(
+  width: 20,
+);
+
+const double kElevation = 10;
+BorderRadius kCircularRadius = BorderRadius.circular(25);
+const double kCurveEdgeRadius = 25;
+
+
