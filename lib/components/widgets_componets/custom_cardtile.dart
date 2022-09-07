@@ -13,10 +13,10 @@ class CustomCardTile extends StatelessWidget {
         Expanded(
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-          decoration:const BoxDecoration(
-            color: AppColors.pureWhiteBackground,
-            borderRadius: BorderRadius.all(Radius.circular(25)),
-            boxShadow: [
+          decoration:BoxDecoration(
+            color: AppColors.offwhiteBackground,
+            borderRadius: const BorderRadius.all(Radius.circular(25)),
+            boxShadow: const [
               BoxShadow(
                 blurRadius: 10,
                 color: AppColors.textColorGreylight

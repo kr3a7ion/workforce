@@ -12,7 +12,7 @@ class RecoveryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.whiteBackground,
+      backgroundColor: AppColors.offwhiteBackground,
       body: Column(
         children: [
           kSpace10,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iconly/iconly.dart';
 
 import 'appcolors.dart';
 
@@ -72,14 +73,20 @@ const kButtonTextStyle = TextStyle(
 const kBorderRadius = BorderRadius.all(Radius.circular(10));
 
 const kBackButton = Icon(
-  Icons.arrow_back_ios_rounded,
+  IconlyBroken.arrow_left_circle,
+  size: 40,
+  color: AppColors.textColor,
+);
+
+const kSettingsButton = Icon(
+  IconlyBroken.setting,
   size: 40,
   color: AppColors.textColor,
 );
 
 const kForwardButton = Icon(
-  Icons.arrow_forward_ios_rounded,
-  size: 35,
+  IconlyBroken.arrow_right_circle,
+  size: 40,
   color: AppColors.textColor,
 );
 
@@ -111,4 +118,8 @@ const double kElevation = 10;
 BorderRadius kCircularRadius = BorderRadius.circular(25);
 const double kCurveEdgeRadius = 25;
 
+const ScrollViewKeyboardDismissBehavior kKeyboardScrollDismiss =
+    ScrollViewKeyboardDismissBehavior.onDrag;
 
+const EdgeInsetsGeometry kScreenPadding =
+    EdgeInsets.symmetric(vertical: 15, horizontal: 20);

@@ -51,7 +51,7 @@ class OnboardingContents extends StatelessWidget {
           margin: const EdgeInsets.only(left: 40, right: 40),
           height: 180,
           decoration: BoxDecoration(
-            color: AppColors.whiteBackground,
+            color: AppColors.offwhiteBackground,
             borderRadius: const BorderRadius.all(Radius.circular(35)),
           ),
           child: Column(

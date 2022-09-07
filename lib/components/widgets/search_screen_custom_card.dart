@@ -30,22 +30,19 @@ class SearchScreenCustomCard extends StatelessWidget {
                         child: Text(
                   'CK',
                   style: TextStyle(
-                      color: AppColors.textColor,
-                      fontWeight: FontWeight.bold),
+                      color: AppColors.textColor, fontWeight: FontWeight.bold),
                 ))),
               ),
             ),
-            title: const Expanded(
-              child: Text(
-                'iOS Developer for\nCodispace',
-                softWrap: true,
-                maxLines: 2,
-                style: TextStyle(
-                  fontWeight: FontWeight.w900,
-                  wordSpacing: 0.5,
-                  fontSize: 20,
-                  color: AppColors.textColor,
-                ),
+            title: const Text(
+              'iOS Developer for\nCodispace',
+              softWrap: true,
+              maxLines: 2,
+              style: TextStyle(
+                fontWeight: FontWeight.w900,
+                wordSpacing: 0.5,
+                fontSize: 20,
+                color: AppColors.textColor,
               ),
             ),
             trailing: TextButton(
@@ -57,35 +54,34 @@ class SearchScreenCustomCard extends StatelessWidget {
             ),
           ),
           kSpace20,
-          jobDescriptionWidget(
+          const JobDescriptionWidget(
               icon: IconlyBold.time_circle, text: 'Full Time'),
           kSpace10,
-          jobDescriptionWidget(
+          const JobDescriptionWidget(
               icon: IconlyBold.star, text: 'Expert Level'),
           kSpace10,
-          jobDescriptionWidget(
-              icon: IconlyBold.location,
-              text: 'Remote or On-Site Role'),
+          const JobDescriptionWidget(
+              icon: IconlyBold.location, text: 'Remote or On-Site Role'),
           kSpace20,
 
           //From this Point down
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              requiredSkillBubble(text: 'Xcode'),
+            children: const [
+              RequiredSkillBubble(text: 'Xcode'),
               kSpaceW10,
-              requiredSkillBubble(text: 'RxSwift'),
+              RequiredSkillBubble(text: 'RxSwift'),
               kSpaceW10,
-              requiredSkillBubble(text: 'Swift UI'),
+              RequiredSkillBubble(text: 'Swift UI'),
             ],
           ),
           kSpace10,
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              requiredSkillBubble(text: 'Objective-C'),
+            children: const [
+              RequiredSkillBubble(text: 'Objective-C'),
               kSpaceW10,
-              requiredSkillBubble(text: 'JSON'),
+              RequiredSkillBubble(text: 'JSON'),
             ],
           ),
           // here needs Refactoring

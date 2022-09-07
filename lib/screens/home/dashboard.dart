@@ -32,21 +32,27 @@ class _DashboardState extends State<Dashboard> {
     return Scaffold(
         extendBody: true,
         extendBodyBehindAppBar: true,
-        backgroundColor: AppColors.whiteBackground,
+        backgroundColor: AppColors.offwhiteBackground,
         body: SingleChildScrollView(
           clipBehavior: Clip.none,
           padding:
               const EdgeInsets.only(left: 15, right: 15, top: 20, bottom: 20),
           child: Column(
             children: [
-              const DashboardAppBar(
-                displayUsername: displayUsername,
-                displayProfileIcon: displayProfileIcon,
-                showNotificatioBadge: showNotificationBadge,
-                displayCountry: displayCountry,
-                displayCity: displayCity,
-                displayCountryFlag: displayCountryFlag,
-              ),
+              DashboardAppBar(
+                  displayUsername: displayUsername,
+                  displayProfileIcon: displayProfileIcon,
+                  showNotificatioBadge: showNotificationBadge,
+                  displayCountry: displayCountry,
+                  displayCity: displayCity,
+                  displayCountryFlag: displayCountryFlag,
+                  ontapped: () {
+                    setState(() {
+                      showNotificationBadge
+                          ? showNotificationBadge = false
+                          : showNotificationBadge = true;
+                    });
+                  }),
               const SizedBox(height: 30),
               CardRow(
                 currency: displayCurrency,
@@ -68,7 +74,6 @@ class _DashboardState extends State<Dashboard> {
                       // Implement OnTap for See all Projects
                     },
                     child: Text(
-                      
                       'See all',
                       style: kSmallTextStyle.copyWith(
                           color: AppColors.profileCardColor, fontSize: 14),

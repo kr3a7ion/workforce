@@ -15,6 +15,7 @@ class DashboardAppBar extends StatelessWidget {
     required this.displayCountry,
     required this.displayCity,
     required this.displayCountryFlag,
+    required this.ontapped,
   }) : super(key: key);
 
   final String? displayUsername;
@@ -23,6 +24,7 @@ class DashboardAppBar extends StatelessWidget {
   final String? displayCountry;
   final String? displayCity;
   final String? displayCountryFlag;
+  final Function() ontapped;
 
   @override
   Widget build(BuildContext context) {
@@ -63,17 +65,20 @@ class DashboardAppBar extends StatelessWidget {
             )
           ],
         ),
-        NotificationCard(
-            cardColor: AppColors.pureWhiteBackground,
-            child: Icon(
-              showNotificatioBadge!
-                  ? IconlyBroken.notification
-                  : IconlyBroken.notification,
-              size: 30,
-              color: showNotificatioBadge!
-                  ? AppColors.profileCardColor
-                  : AppColors.textColorGrey,
-            ))
+        GestureDetector(
+          onTap: () => ontapped(),
+          child: NotificationCard(
+              cardColor: AppColors.pureWhiteBackground,
+              child: Icon(
+                showNotificatioBadge!
+                    ? IconlyBroken.notification
+                    : IconlyBroken.notification,
+                size: 30,
+                color: showNotificatioBadge!
+                    ? AppColors.profileCardColor
+                    : AppColors.textColorGrey,
+              )),
+        )
       ],
     );
   }

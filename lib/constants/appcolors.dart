@@ -21,7 +21,7 @@ MaterialColor buildMaterialColor(Color color) {
 }
 
 class AppColors {
-  static final whiteBackground = buildMaterialColor(const Color(0xffebeff3));
+  static final offwhiteBackground = buildMaterialColor(const Color(0xffebeff3));
 
   static const pureWhiteBackground = Colors.white;
 
